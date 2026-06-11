@@ -7,7 +7,6 @@ export function SpecialtyCard({ specialty }: { specialty: Specialty }) {
   return (
     <Link
       href={`/especialidades/${specialty.slug}`}
-      aria-label={specialty.nombre}
       className="group flex flex-col rounded-2xl border border-[var(--color-border)] bg-white p-6 transition-shadow duration-200 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-secondary)]"
     >
       <Icon className="h-8 w-8 text-[var(--color-secondary)]" aria-hidden="true" />

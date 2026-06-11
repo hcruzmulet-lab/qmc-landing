@@ -21,12 +21,14 @@ export type Specialty = {
   queTratamos: string[];
   faqs: SpecialtyFaq[];
   doctorIds: string[]; // referencia a lib/doctors.ts
+  foto?: string; // imagen hero de la página de especialidad (Fase 2)
+  incluye?: string[]; // qué incluye la consulta (opcional)
   metaTitle: string;
   metaDescription: string;
 };
 
 // ── Contenido inicial editable (confirmar con la clínica) ──────────
-export const specialties: Specialty[] = [
+export const specialties = [
   {
     slug: "pediatria",
     nombre: "Pediatría",
@@ -202,8 +204,12 @@ export const specialties: Specialty[] = [
     metaDescription:
       "Laboratorio clínico en Quito: biometría, perfil lipídico, glucosa y más con resultados rápidos. Agenda por WhatsApp en QMC Medisuport.",
   },
-];
+] satisfies Specialty[];
 // ───────────────────────────────────────────────────────────────────
+
+// Unión literal de los slugs válidos — contrato de tipos para otras capas
+// (p.ej. Doctor.especialidades). Un typo se vuelve error de compilación.
+export type SpecialtySlug = (typeof specialties)[number]["slug"];
 
 export function getSpecialtyBySlug(slug: string): Specialty | undefined {
   return specialties.find((s) => s.slug === slug);

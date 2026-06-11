@@ -117,7 +117,11 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* QMC brand tokens — paleta oficial del manual (doc/logos) */
+/* QMC brand tokens — paleta oficial del manual (doc/logos)
+   Nota: --color-accent (verde WhatsApp) sobreescribe a propósito el 'accent'
+   semántico de shadcn; los componentes shadcn no se usan en la landing.
+   Modo oscuro diferido: estos tokens son hex fijos sin variante en .dark a
+   propósito (el sitio es solo claro en v1). */
 :root {
   --color-primary: #103158;        /* azul marino — títulos, header, footer */
   --color-on-primary: #FFFFFF;
