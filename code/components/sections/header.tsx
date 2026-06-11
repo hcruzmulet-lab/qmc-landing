@@ -7,9 +7,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <div className="flex items-center gap-2">
-          <Image src="/logo.svg" alt="QMC Quito Medical Center" width={40} height={40} priority />
-          <span className="font-[var(--font-heading)] text-lg font-bold text-[var(--color-primary)]">QMC</span>
+        <div className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="QMC MEDISUPORT — Quito Medical Center"
+            width={59}
+            height={50}
+            priority
+            className="h-11 w-auto"
+          />
         </div>
         <div className="flex items-center gap-3">
           <a
