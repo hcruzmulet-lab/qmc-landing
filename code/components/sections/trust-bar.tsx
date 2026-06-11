@@ -1,4 +1,5 @@
 import { MapPin, HeartHandshake, ShieldCheck, Stethoscope } from "lucide-react";
+import { Reveal } from "@/components/sections/reveal";
 
 const items = [
   { icon: MapPin, label: "Av. 6 de Diciembre, Quito" },
@@ -10,6 +11,7 @@ const items = [
 export function TrustBar() {
   return (
     <section className="border-y border-[var(--color-border)] bg-white">
+      <Reveal>
       <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 py-6 md:grid-cols-4">
         {items.map(({ icon: Icon, label }) => (
           <div key={label} className="flex items-center gap-2 text-sm text-[var(--color-foreground)]">
@@ -18,6 +20,7 @@ export function TrustBar() {
           </div>
         ))}
       </div>
+      </Reveal>
     </section>
   );
 }

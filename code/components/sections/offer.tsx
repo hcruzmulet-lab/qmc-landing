@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import { promo, savingsLabel } from "@/lib/promo";
 import { CtaButton } from "@/components/sections/cta-button";
+import { Reveal } from "@/components/sections/reveal";
 
 const includes = [
   "Revisión de oídos",
@@ -12,7 +13,8 @@ const includes = [
 export function Offer() {
   return (
     <section id="oferta" className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-      <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--color-border)] bg-white p-8 shadow-sm">
+      <Reveal>
+      <div className="mx-auto max-w-2xl rounded-2xl border border-[var(--color-border)] bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-md">
         <h2 className="font-[var(--font-heading)] text-2xl font-bold text-[var(--color-foreground)]">
           ¿Qué incluye tu consulta integral?
         </h2>
@@ -26,8 +28,8 @@ export function Offer() {
         </ul>
         <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <span className="text-3xl font-bold text-[var(--color-accent)]">{promo.price}</span>
-            <span className="ml-2 text-lg text-[var(--color-muted-foreground)] line-through">{promo.regularPrice}</span>
+            <span className="tabular-nums text-3xl font-bold text-[var(--color-accent)]">{promo.price}</span>
+            <span className="tabular-nums ml-2 text-lg text-[var(--color-muted-foreground)] line-through">{promo.regularPrice}</span>
             <p className="text-sm font-medium text-[var(--color-accent)]">{savingsLabel(promo)}</p>
           </div>
           <CtaButton
@@ -36,6 +38,7 @@ export function Offer() {
           />
         </div>
       </div>
+      </Reveal>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import { ShieldCheck, Microscope, Activity } from "lucide-react";
+import { Reveal } from "@/components/sections/reveal";
 
 const points = [
   { icon: ShieldCheck, title: "Prevención", desc: "El cuidado no es solo cuando duele. Cuidamos tu salud antes." },
@@ -13,14 +14,16 @@ export function WhyQmc() {
         ¿Por qué elegir QMC?
       </h2>
       <div className="mt-10 grid gap-8 md:grid-cols-3">
-        {points.map((p) => (
-          <div key={p.title} className="text-center">
+        {points.map((p, i) => (
+          <Reveal key={p.title} delay={i * 0.1}>
+          <div className="text-center">
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-muted)]">
               <p.icon className="h-6 w-6 text-[var(--color-primary)]" aria-hidden="true" />
             </div>
             <h3 className="mt-4 font-[var(--font-heading)] text-lg font-semibold">{p.title}</h3>
             <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">{p.desc}</p>
           </div>
+          </Reveal>
         ))}
       </div>
     </section>

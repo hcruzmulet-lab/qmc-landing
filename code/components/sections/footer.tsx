@@ -1,6 +1,6 @@
-import { ExternalLink } from "lucide-react";
 import { site } from "@/lib/site";
 import { CtaButton } from "@/components/sections/cta-button";
+import { InstagramIcon } from "@/components/icons/instagram";
 
 export function Footer() {
   return (
@@ -13,7 +13,7 @@ export function Footer() {
         </div>
         <div className="flex items-start">
           <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/90">
-            <ExternalLink className="h-5 w-5" aria-hidden="true" />
+            <InstagramIcon className="h-5 w-5" />
             {site.instagramHandle}
           </a>
         </div>

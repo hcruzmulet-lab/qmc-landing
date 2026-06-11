@@ -1,5 +1,6 @@
 import { Wind, Users, ClipboardCheck } from "lucide-react";
 import { CtaButton } from "@/components/sections/cta-button";
+import { Reveal } from "@/components/sections/reveal";
 
 const services = [
   {
@@ -29,12 +30,15 @@ export function Services() {
   return (
     <section id="servicios" className="bg-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <h2 className="text-center font-[var(--font-heading)] text-3xl font-bold text-[var(--color-foreground)]">
-          Nuestros servicios
-        </h2>
+        <Reveal>
+          <h2 className="text-center font-[var(--font-heading)] text-3xl font-bold text-[var(--color-foreground)]">
+            Nuestros servicios
+          </h2>
+        </Reveal>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.title} className="flex flex-col rounded-2xl border border-[var(--color-border)] p-6">
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={i * 0.08}>
+            <div className="flex flex-col rounded-2xl border border-[var(--color-border)] p-6 transition-shadow duration-200 hover:shadow-lg">
               <s.icon className="h-8 w-8 text-[var(--color-primary)]" aria-hidden="true" />
               <h3 className="mt-4 font-[var(--font-heading)] text-xl font-semibold text-[var(--color-foreground)]">
                 {s.title}
@@ -44,6 +48,7 @@ export function Services() {
                 <CtaButton message={s.message} source={s.source} label="Consultar" className="w-full" />
               </div>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

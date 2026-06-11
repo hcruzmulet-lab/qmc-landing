@@ -1,5 +1,7 @@
-import { ExternalLink, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 import { site } from "@/lib/site";
+import { Reveal } from "@/components/sections/reveal";
+import { InstagramIcon } from "@/components/icons/instagram";
 
 // TODO(content): replace with real patient reviews before scaling ad spend.
 const testimonials = [
@@ -17,11 +19,13 @@ export function Testimonials() {
         </h2>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {testimonials.map((t, i) => (
-            <figure key={i} className="rounded-2xl border border-[var(--color-border)] p-6">
+            <Reveal key={i} delay={i * 0.08}>
+            <figure className="rounded-2xl border border-[var(--color-border)] p-6 transition-shadow duration-200 hover:shadow-md">
               <Quote className="h-6 w-6 text-[var(--color-secondary)]" aria-hidden="true" />
               <blockquote className="mt-3 text-sm text-[var(--color-foreground)]">{t.text}</blockquote>
               <figcaption className="mt-4 text-sm font-semibold text-[var(--color-muted-foreground)]">— {t.name}</figcaption>
             </figure>
+            </Reveal>
           ))}
         </div>
         <div className="mt-8 text-center">
@@ -31,7 +35,7 @@ export function Testimonials() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-[var(--color-primary)]"
           >
-            <ExternalLink className="h-5 w-5" aria-hidden="true" />
+            <InstagramIcon className="h-5 w-5" />
             Síguenos en {site.instagramHandle}
           </a>
         </div>
