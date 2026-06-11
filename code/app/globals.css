@@ -117,17 +117,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* QMC brand tokens */
+/* QMC brand tokens — paleta oficial del manual (doc/logos) */
 :root {
-  --color-primary: #0284C7;
+  --color-primary: #103158;        /* azul marino — títulos, header, footer */
   --color-on-primary: #FFFFFF;
-  --color-secondary: #0EA5E9;
-  --color-accent: #059669;
-  --color-background: #F0F9FF;
-  --color-foreground: #0F172A;
-  --color-muted: #EFF7FB;
-  --color-muted-foreground: #475569;
-  --color-border: #E0F0F8;
+  --color-secondary: #217499;      /* teal — enlaces, íconos, detalles */
+  --color-accent: #059669;         /* verde WhatsApp — botones de conversión (NO cambiar) */
+  --color-neutral: #A4B1BF;        /* gris-azul — bordes suaves, texto secundario */
+  --color-background: #FFFFFF;
+  --color-surface: #F6F8FA;        /* fondos de sección alternos */
+  --color-foreground: #14253B;     /* texto principal (navy slate, legible en cuerpo largo) */
+  --color-muted: #F1F5F9;
+  --color-muted-foreground: #5B6B7B;
+  --color-border: #E2E8F0;
   --color-destructive: #DC2626;
 }
 
