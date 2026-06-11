@@ -1,3 +1,5 @@
+import { vi } from "vitest";
+
 // Mock IntersectionObserver — required by framer-motion's whileInView and Next.js Link in jsdom
 class MockIntersectionObserver {
   observe = vi.fn();

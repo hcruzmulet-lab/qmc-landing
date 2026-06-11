@@ -30,8 +30,11 @@ export function Hero() {
             </span>
 
             <h1 className="font-[var(--font-heading)] text-4xl font-bold leading-tight text-[var(--color-foreground)] sm:text-5xl">
-              Chequeo integral en Quito
+              Clínica de especialidades en Quito
             </h1>
+            <p className="text-lg font-medium text-[var(--color-primary)]">
+              Pediatría · Medicina General · Gastroenterología · Traumatología · Fisiatría · Rehabilitación · Laboratorio
+            </p>
 
             <div className="flex items-end gap-3">
               <span className="text-5xl font-bold text-[var(--color-accent)] tabular-nums">{promo.price}</span>
@@ -44,8 +47,8 @@ export function Hero() {
             </div>
 
             <p className="text-lg text-[var(--color-muted-foreground)]">
-              Incluye revisión de oídos, garganta, fondo de ojo y control de signos vitales.
-              Atención preventiva y personalizada para ti y tu familia.
+              Atención cercana y segura para toda tu familia, con especialistas en un solo lugar.
+              Aprovecha nuestra promoción de chequeo integral por {promo.price}.
             </p>
 
             <ul className="space-y-2">
