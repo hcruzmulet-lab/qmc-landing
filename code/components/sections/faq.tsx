@@ -15,7 +15,7 @@ export function Faq() {
         <h2 className="text-center font-[var(--font-heading)] text-3xl font-bold text-[var(--color-foreground)]">
           Preguntas frecuentes
         </h2>
-        <Accordion type="single" collapsible className="mt-8">
+        <Accordion className="mt-8">
           {faqs.map((f, i) => (
             <AccordionItem key={i} value={`item-${i}`}>
               <AccordionTrigger className="text-left">{f.q}</AccordionTrigger>
