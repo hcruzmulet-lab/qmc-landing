@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="bg-[var(--color-primary)] text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-3">
         <div>
-          <p className="font-[var(--font-heading)] text-xl font-bold">QMC — Quito Medical Center</p>
+          <p className="font-[var(--font-heading)] text-xl font-bold">{site.brand}</p>
           <p className="mt-2 text-sm text-white/80">{site.address}</p>
           <p className="mt-1 text-sm text-white/80">{site.phone}</p>
         </div>

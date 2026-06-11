@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
-import { Figtree, Noto_Sans } from "next/font/google";
+import { Hanken_Grotesk, Mulish } from "next/font/google";
 import "./globals.css";
 import { AnalyticsScripts } from "@/components/analytics-scripts";
 
-const figtree = Figtree({ subsets: ["latin"], variable: "--font-heading", weight: ["400","500","600","700"] });
-const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-body", weight: ["400","500","700"] });
+const hanken = Hanken_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
+const mulish = Mulish({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "QMC — Consulta integral $10 en Quito | Medicina Familiar y Neumología",
+  title: "QMC Medisuport — Clínica de especialidades en Quito",
   description:
-    "Por reapertura: chequeo integral por $10 (oídos, garganta, fondo de ojo y signos vitales). Medicina Familiar y Neumología en Av. 6 de Diciembre, Quito. Agenda por WhatsApp.",
+    "Pediatría, Medicina General, Gastroenterología, Traumatología, Fisiatría, Rehabilitación y Laboratorio Clínico en Quito. Atención cercana y segura. Agenda por WhatsApp.",
   openGraph: {
-    title: "QMC — Consulta integral $10 en Quito",
-    description: "Chequeo integral promocional. Agenda por WhatsApp.",
+    title: "QMC Medisuport — Clínica de especialidades en Quito",
+    description:
+      "Especialistas para toda tu familia. Atención cercana y segura. Agenda por WhatsApp.",
     locale: "es_EC",
     type: "website",
   },
@@ -21,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body className={`${figtree.variable} ${notoSans.variable} antialiased`}>
+      <body className={`${hanken.variable} ${mulish.variable} antialiased`}>
         <AnalyticsScripts />
         {children}
       </body>
