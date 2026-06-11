@@ -20,15 +20,16 @@ Landing page **funcional y construida**. Falta deploy + 4 mejoras UX/UI acordada
 - **Logo real** integrado: `code/public/logo.png` (header) + `code/app/icon.png` (favicon). Originales en `doc/logos/`.
 - Build estático verde, verificado visual mobile 375px + desktop.
 
+### ✅ Mejoras UX/UI (hechas con MCP 21st + skill ui-ux-pro-max)
+- **Mejora A — Foundations:** `components/sections/reveal.tsx` (scroll reveal, reduced-motion), `components/sections/countdown.tsx` (countdown en vivo), `components/icons/instagram.tsx` (glifo Instagram oficial via `logo_search` del MCP 21st). `validUntilISO: "2026-06-30T23:59:59-05:00"` en `lib/promo.ts`.
+- **Mejora B — Hero premium:** `hero.tsx` reconstruido (componente base del MCP 21st `21st_magic_component_builder`, adaptado): 2 columnas, card "ticket/cita" con checklist + countdown en vivo + trust signals reales (sin métricas inventadas), reveals. Reemplaza el gradiente vacío.
+- **Mejora C — Pulido:** Reveal+stagger en services/why/offer/testimonials/trust-bar, hover elevación en cards, cifras tabulares en precios, Instagram real en testimonials+footer, smooth-scroll motion-safe.
+
 ### ⏳ Pendiente
 - **Task 20: Deploy a Vercel** (necesita acción usuario: GitHub push + Vercel import root=`code` + dominio).
-- **3 mejoras UX/UI** acordadas (subagentes + review visual), sin conflicto de archivos:
-  - **Mejora A — Foundations:** crear `components/sections/reveal.tsx` (framer-motion `whileInView` + reduced-motion), `components/sections/countdown.tsx` (countdown en vivo), `components/icons/instagram.tsx` (SVG marca). Añadir `validUntilISO: "2026-06-30T23:59:59-05:00"` a `lib/promo.ts` (Ecuador UTC-5) para el countdown.
-  - **Mejora B — Hero premium + urgencia:** reconstruir `hero.tsx`: columna derecha = tarjeta "ticket/cita" con propósito (reemplaza gradiente vacío) + countdown + reveal. **Prueba social HONESTA**: Instagram @clinicaqmc + señales reales. NO inventar rating/nº pacientes (si la clínica da números reales, agregarlos).
-  - **Mejora C — Pulido:** aplicar Reveal + stagger a services/why/offer/testimonials; hover elevación + `cursor-pointer` en cards; cifras tabulares en precios; reemplazar ícono Instagram genérico (`ExternalLink`) por SVG real en testimonials+footer; smooth-scroll.
 
 ## Tracker de tareas (TaskList)
-- #1–#20 = completas. #21 = Deploy (pending). #22 = Mejora A, #23 = Mejora B, #24 = Mejora C (pending).
+- #1–#20 = completas. #21 = Deploy (pending). #22/#23/#24 = Mejoras A/B/C = completas.
 
 ## Checklist post-launch (contenido, antes de pagar ads)
 - [x] Logo real ✅
