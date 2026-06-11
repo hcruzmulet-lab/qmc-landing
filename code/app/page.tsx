@@ -1,7 +1,7 @@
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
 import { TrustBar } from "@/components/sections/trust-bar";
-import { Specialties } from "@/components/sections/specialties";
+import { SpecialtiesShowcase } from "@/components/sections/specialties-showcase";
 import { Offer } from "@/components/sections/offer";
 import { HowToBook } from "@/components/shared/how-to-book";
 import { MedicalTeam } from "@/components/sections/medical-team";
@@ -23,7 +23,7 @@ export default function Home() {
       <main className="pb-20 lg:pb-0">
         <Hero />
         <TrustBar />
-        <Specialties />
+        <SpecialtiesShowcase />
         <Offer />
         <HowToBook />
         <MedicalTeam />
