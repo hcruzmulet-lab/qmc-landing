@@ -4,6 +4,7 @@ export type Promo = {
   regularPrice: string; // struck-through anchor price
   reason: string;       // e.g. "por reapertura"
   validUntil: string;   // human-readable deadline
+  validUntilISO: string; // ISO 8601 deadline for countdown timer
   scarcity: string;     // urgency line
 };
 
@@ -14,6 +15,7 @@ export const promo: Promo = {
   regularPrice: "$25",
   reason: "por reapertura",
   validUntil: "30 de junio",
+  validUntilISO: "2026-06-30T23:59:59-05:00",
   scarcity: "Cupos limitados por semana",
 };
 // ──────────────────────────────────────────────────────────────
