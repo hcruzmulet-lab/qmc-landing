@@ -4,7 +4,10 @@ node_modules
 .DS_Store
 dist
 .claude/
+# Skills/plugins de agentes (tooling local, no del proyecto)
+.agents/
 # Notas del harness (no del proyecto)
 /memory/
 # Originales pesados de marca (versiones optimizadas en code/public/clinic)
 /doc/logos/
+skills-lock.json

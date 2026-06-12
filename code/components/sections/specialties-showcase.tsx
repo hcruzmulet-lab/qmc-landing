@@ -74,7 +74,7 @@ export function SpecialtiesShowcase() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:gap-16">
+        <div className="mt-12 grid gap-10 lg:grid-cols-[1fr_0.92fr] lg:gap-14">
           {/* Directorio — filas */}
           <Reveal className="-my-2">
             <ul>
@@ -149,7 +149,7 @@ export function SpecialtiesShowcase() {
                     key={activa.slug}
                     src={fotos[activa.slug] ?? fotoFallback(activa.nombre)}
                     alt={`${activa.nombre} en QMC Medisuport`}
-                    className="h-72 w-full object-cover"
+                    className="h-80 w-full object-cover sm:h-96"
                   />
                   <div
                     aria-hidden="true"
