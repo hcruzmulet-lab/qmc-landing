@@ -1,12 +1,8 @@
 "use client";
-import { useEffect } from "react";
 import { CalendarPlus } from "lucide-react";
-import { getCalApi } from "@calcom/embed-react";
 import type { Specialty } from "@/lib/specialties";
 import { calLinkFor, BOOKING_NAMESPACE } from "@/lib/booking";
 import { trackLeadClick } from "@/lib/analytics";
-
-const BRAND_NAVY = "#103158";
 
 type Props = {
   specialty: Pick<Specialty, "slug" | "nombre" | "calEventSlug">;
@@ -15,30 +11,10 @@ type Props = {
 };
 
 // Botón que abre el popup de Cal.com de UNA especialidad. El popup lo dispara
-// el script de Cal.com al detectar los atributos data-cal-*; useEffect solo
-// inicializa apariencia y el listener de reserva exitosa (para analytics).
+// el script de Cal.com al leer los atributos data-cal-*. La inicialización del
+// embed (apariencia + listener de reserva exitosa) vive UNA sola vez en
+// <BookingEmbedInit/>, no por botón, para no registrar listeners duplicados.
 export function BookingButton({ specialty, label, className = "" }: Props) {
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      const cal = await getCalApi({ namespace: BOOKING_NAMESPACE });
-      if (cancelled) return;
-      cal("ui", {
-        theme: "light",
-        hideEventTypeDetails: false,
-        layout: "month_view",
-        styles: { branding: { brandColor: BRAND_NAVY } },
-      });
-      cal("on", {
-        action: "bookingSuccessful",
-        callback: () => trackLeadClick(`booking-success:${specialty.slug}`),
-      });
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, [specialty.slug]);
-
   return (
     <button
       type="button"
