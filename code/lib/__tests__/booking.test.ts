@@ -3,6 +3,7 @@ import {
   CAL_USERNAME,
   BOOKING_NAMESPACE,
   calLinkFor,
+  hostedBookingUrl,
   isBookable,
   bookableSpecialties,
 } from "@/lib/booking";
@@ -37,5 +38,12 @@ describe("isBookable / bookableSpecialties", () => {
 describe("BOOKING_NAMESPACE", () => {
   it("es un string estable y no vacío", () => {
     expect(BOOKING_NAMESPACE).toBe("agendar");
+  });
+});
+
+describe("hostedBookingUrl", () => {
+  it("arma la URL hosteada de Cal.com para el fallback", () => {
+    const pediatria = getSpecialtyBySlug("pediatria")!;
+    expect(hostedBookingUrl(pediatria)).toBe(`https://cal.com/${CAL_USERNAME}/pediatria`);
   });
 });

@@ -26,3 +26,8 @@ export function bookableSpecialties(): Specialty[] {
 export function calLinkFor(s: Pick<Specialty, "slug" | "calEventSlug">): string {
   return `${CAL_USERNAME}/${s.calEventSlug ?? s.slug}`;
 }
+
+// URL de la página hosteada de Cal.com — fallback si el script del embed no carga.
+export function hostedBookingUrl(s: Pick<Specialty, "slug" | "calEventSlug">): string {
+  return `https://cal.com/${calLinkFor(s)}`;
+}
