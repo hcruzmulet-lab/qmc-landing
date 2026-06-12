@@ -6,7 +6,6 @@ import { About } from "@/components/sections/about";
 import { Offer } from "@/components/sections/offer";
 import { HowToBook } from "@/components/shared/how-to-book";
 import { MedicalTeam } from "@/components/sections/medical-team";
-import { WhyQmc } from "@/components/sections/why-qmc";
 import { Testimonials } from "@/components/sections/testimonials";
 import { InstagramCta } from "@/components/sections/instagram-cta";
 import { B2bTeaser } from "@/components/sections/b2b-teaser";
@@ -25,7 +24,6 @@ export default function Home() {
         <Promociones />
         <SpecialtiesShowcase />
         <About />
-        <WhyQmc />
         <Offer />
         <HowToBook />
         <MedicalTeam />
