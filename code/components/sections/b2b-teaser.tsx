@@ -1,46 +1,112 @@
-import { Building2, Check } from "lucide-react";
+import { Stethoscope, BadgePercent, Zap } from "lucide-react";
 import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
+import { BorderBeam } from "@/components/ui/border-beam";
 
-const beneficios = [
-  "Chequeos ocupacionales para tu personal",
-  "Atención preventiva con tarifas corporativas",
-  "Coordinación ágil por WhatsApp",
+// Qué incluye el convenio — íconos distintos por beneficio (no checklist plano).
+const incluye = [
+  {
+    icon: Stethoscope,
+    title: "Chequeos ocupacionales",
+    desc: "Evaluaciones médicas para tu personal, coordinadas en bloque.",
+  },
+  {
+    icon: BadgePercent,
+    title: "Tarifas corporativas",
+    desc: "Atención preventiva con precios pensados para tu nómina.",
+  },
+  {
+    icon: Zap,
+    title: "Coordinación ágil",
+    desc: "Un canal directo por WhatsApp para agendar a tu equipo.",
+  },
 ];
+
+const sectores = ["Oficinas", "Fábricas", "Retail", "PYMES"];
 
 export function B2bTeaser() {
   return (
-    <section id="empresas" className="bg-[var(--color-primary)] text-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <Reveal variant="left" className="space-y-4">
-            <Building2 className="h-9 w-9 text-[#6FB0CE]" aria-hidden="true" />
-            <h2 className="font-display text-3xl font-bold sm:text-4xl">
-              Convenios para empresas
+    <section
+      id="empresas"
+      className="relative overflow-hidden text-white"
+      style={{
+        background:
+          "radial-gradient(760px 420px at 88% 0%, rgba(43,212,230,0.18), transparent 60%)," +
+          "radial-gradient(760px 520px at 0% 100%, rgba(33,116,153,0.30), transparent 60%)," +
+          "linear-gradient(180deg, #0C2545 0%, #103158 100%)",
+      }}
+    >
+      <div
+        aria-hidden="true"
+        className="bg-grid pointer-events-none absolute inset-0 opacity-50"
+        style={{ maskImage: "radial-gradient(circle at 60% 38%, #000 32%, transparent 80%)" }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 sm:py-28">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+          {/* Mensaje + CTA */}
+          <Reveal variant="left">
+            <h2 className="font-display text-4xl font-bold leading-[1.02] [text-wrap:balance] sm:text-6xl">
+              La salud de tu equipo,
+              <br />
+              en una sola clínica
             </h2>
-            <p className="text-white/80">
-              Cuida la salud de tu equipo con chequeos ocupacionales y atención preventiva.
-              Diseñamos un convenio a la medida de tu empresa.
+            <p className="mt-5 max-w-md text-lg leading-relaxed text-white/80">
+              Convenios para empresas a la medida: chequeos ocupacionales y atención
+              preventiva con tarifas corporativas, coordinados por un solo canal.
             </p>
-            <ul className="space-y-2">
-              {beneficios.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-white/90">
-                  <Check
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[#6FB0CE]"
-                    strokeWidth={2.5}
-                    aria-hidden="true"
-                  />
-                  {b}
+
+            <div className="mt-8">
+              <CtaButton
+                message="Hola QMC, represento a una empresa y quiero información sobre convenios y chequeos ocupacionales."
+                source="b2b"
+                label="Solicitar convenio"
+              />
+            </div>
+
+            <ul className="mt-8 flex flex-wrap gap-2">
+              {sectores.map((s) => (
+                <li
+                  key={s}
+                  className="rounded-full border border-white/20 px-3.5 py-1.5 text-sm font-medium text-white/85"
+                >
+                  {s}
                 </li>
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.1} variant="right" className="lg:justify-self-end">
-            <CtaButton
-              message="Hola QMC, represento a una empresa y quiero información sobre convenios y chequeos ocupacionales."
-              source="b2b"
-              label="Solicitar convenio empresarial"
-            />
+
+          {/* Panel: qué incluye — objeto focal con luz de borde */}
+          <Reveal variant="right" delay={0.1}>
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0C2545] shadow-2xl">
+              <BorderBeam size={300} duration={11} colorFrom="#2BD4E6" colorTo="#6FB0CE" />
+              <p className="eyebrow px-6 pt-6 text-[var(--color-neutral)]">
+                Qué incluye el convenio
+              </p>
+              <ul className="mt-2 divide-y divide-white/10">
+                {incluye.map((b) => {
+                  const Icon = b.icon;
+                  return (
+                    <li
+                      key={b.title}
+                      className="flex items-start gap-4 px-6 py-5 transition-colors hover:bg-white/[0.04]"
+                    >
+                      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[var(--color-aqua)]/10 text-[var(--color-aqua)]">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <div className="min-w-0">
+                        <h3 className="font-display text-lg font-semibold text-white">
+                          {b.title}
+                        </h3>
+                        <p className="mt-1 text-sm leading-relaxed text-white/70">
+                          {b.desc}
+                        </p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </Reveal>
         </div>
       </div>
