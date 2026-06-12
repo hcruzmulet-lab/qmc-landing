@@ -23,15 +23,15 @@ export default function Home() {
         <Hero />
         <SpecialtiesShowcase />
         <About />
+        <WhyQmc />
         <Offer />
         <HowToBook />
         <MedicalTeam />
-        <WhyQmc />
         <Testimonials />
+        <Faq />
         <InstagramCta />
         <B2bTeaser />
         <Location />
-        <Faq />
       </main>
       <Footer />
       <WhatsAppFab />

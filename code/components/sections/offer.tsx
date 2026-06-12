@@ -35,11 +35,7 @@ export function Offer() {
             <BorderBeam size={300} duration={11} delay={5.5} colorFrom="#059669" colorTo="#2BD4E6" />
             {/* Contenido */}
             <div className="p-8 sm:p-10">
-              <p className="eyebrow flex items-center gap-3">
-                <span className="h-px w-8 bg-[var(--color-secondary)]" aria-hidden="true" />
-                Consulta integral
-              </p>
-              <h2 className="mt-4 font-display text-2xl font-bold leading-[1.15] text-[var(--color-primary)] sm:text-3xl">
+              <h2 className="font-display text-2xl font-bold leading-[1.15] text-[var(--color-primary)] sm:text-3xl">
                 Una revisión completa, en una sola visita
               </h2>
               <ul className="mt-6 grid gap-3 sm:grid-cols-2">

@@ -73,7 +73,7 @@ export function Hero() {
 
             <h1 className="mt-5 font-display text-[2.3rem] font-bold leading-[1.06] [text-wrap:balance] sm:text-[3.4rem]">
               Especialistas para toda tu{" "}
-              <span className="text-gradient-brand">familia</span>, en un solo lugar.
+              <span className="text-[var(--color-aqua)]">familia</span>, en un solo lugar.
             </h1>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/75 sm:text-lg">
@@ -82,7 +82,7 @@ export function Hero() {
             </p>
 
             {promo.enabled && (
-              <div className="mt-6 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-[var(--color-aqua)]/45 bg-[var(--color-aqua)]/10 px-4 py-2.5 shadow-[0_0_34px_rgba(43,212,230,0.22)] backdrop-blur">
+              <div className="mt-6 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-[var(--color-aqua)]/45 bg-[var(--color-aqua)]/10 px-4 py-2.5 shadow-[0_0_34px_rgba(43,212,230,0.22)]">
                 <span className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-[var(--color-aqua)]">
                   <span className="h-2 w-2 rounded-full bg-[var(--color-accent)] shadow-[0_0_0_4px_rgba(5,150,105,0.3)]" aria-hidden="true" />
                   Promo reapertura
@@ -113,10 +113,6 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-
-            <p className="mt-7 text-sm text-white/55">
-              7 especialidades · Atención cercana · Seguros principales aceptados
-            </p>
           </Reveal>
 
           {/* Foto real + nodos de especialidad orbitando */}
@@ -142,7 +138,7 @@ export function Hero() {
                 }}
               />
               {/* Tarjeta flotante — ubicación real */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-2xl bg-white/95 p-3 shadow-xl backdrop-blur">
+              <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3 rounded-2xl bg-white p-3 shadow-xl">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--color-secondary)]/12 text-[var(--color-secondary)]">
                   <MapPin className="h-5 w-5" aria-hidden="true" />
                 </span>
@@ -185,7 +181,7 @@ export function Hero() {
             {facts.map(({ icon: Icon, value, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur sm:p-5"
+                className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5"
               >
                 <Icon className="h-6 w-6 shrink-0 text-[var(--color-aqua)]" aria-hidden="true" />
                 <div className="min-w-0">

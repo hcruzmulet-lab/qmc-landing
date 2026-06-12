@@ -38,11 +38,7 @@ export function About() {
     <section id="quienes-somos" className="bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow flex items-center gap-3">
-            <span className="h-px w-8 bg-[var(--color-secondary)]" aria-hidden="true" />
-            Quiénes somos
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
             Una clínica pensada para tu familia
           </h2>
           <p className="mt-4 max-w-xl text-[var(--color-muted-foreground)]">

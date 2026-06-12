@@ -24,11 +24,7 @@ export function HowToBook() {
     <section id="como-agendar" className="bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow flex items-center gap-3">
-            <span className="h-px w-8 bg-[var(--color-secondary)]" aria-hidden="true" />
-            Cómo agendar
-          </p>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
             Agendar es muy fácil
           </h2>
         </Reveal>

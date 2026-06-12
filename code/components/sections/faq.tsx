@@ -33,10 +33,7 @@ export function Faq() {
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-16 sm:py-24">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-aqua)]">
-            Dudas
-          </p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-white sm:text-4xl">
             Preguntas frecuentes
           </h2>
           <p className="mt-3 text-white/65">
@@ -50,7 +47,7 @@ export function Faq() {
             return (
               <div
                 key={i}
-                className={`rounded-2xl border backdrop-blur transition-all duration-300 ${
+                className={`rounded-2xl border transition-all duration-300 ${
                   isOpen
                     ? "border-[var(--color-aqua)]/55 bg-white/[0.06] shadow-[0_0_44px_rgba(43,212,230,0.16)]"
                     : "border-white/10 bg-white/[0.03] hover:border-white/25"

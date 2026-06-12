@@ -25,8 +25,7 @@ export function Testimonials() {
     <section className="bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow">Testimonios</p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
             Lo que dicen nuestros pacientes
           </h2>
           <p className="mt-3 text-[var(--color-muted-foreground)]">
