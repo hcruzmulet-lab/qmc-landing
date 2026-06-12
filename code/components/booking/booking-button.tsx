@@ -7,6 +7,7 @@ import { trackLeadClick } from "@/lib/analytics";
 type Props = {
   specialty: Pick<Specialty, "slug" | "nombre" | "calEventSlug">;
   label?: string;
+  ariaLabel?: string;
   className?: string;
 };
 
@@ -14,10 +15,11 @@ type Props = {
 // el script de Cal.com al leer los atributos data-cal-*. La inicialización del
 // embed (apariencia + listener de reserva exitosa) vive UNA sola vez en
 // <BookingEmbedInit/>, no por botón, para no registrar listeners duplicados.
-export function BookingButton({ specialty, label, className = "" }: Props) {
+export function BookingButton({ specialty, label, ariaLabel, className = "" }: Props) {
   return (
     <button
       type="button"
+      aria-label={ariaLabel}
       data-cal-namespace={BOOKING_NAMESPACE}
       data-cal-link={calLinkFor(specialty)}
       data-cal-config='{"layout":"month_view"}'

@@ -52,6 +52,7 @@ export function AgendaSection() {
                     <BookingButton
                       specialty={s}
                       label="Agendar"
+                      ariaLabel={`Agendar ${s.nombre}`}
                       className="px-4"
                     />
                   </div>

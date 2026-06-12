@@ -34,4 +34,13 @@ describe("AgendaSection", () => {
     const wa = screen.getByRole("link", { name: /whatsapp/i });
     expect(wa.getAttribute("href")).toContain("wa.me");
   });
+
+  it("cada botón de agendar tiene un nombre accesible único con la especialidad", () => {
+    render(<AgendaSection />);
+    for (const s of bookableSpecialties()) {
+      expect(
+        screen.getByRole("button", { name: `Agendar ${s.nombre}` })
+      ).toBeTruthy();
+    }
+  });
 });

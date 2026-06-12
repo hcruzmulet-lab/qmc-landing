@@ -20,4 +20,12 @@ describe("BookingButton", () => {
     render(<BookingButton specialty={pediatria} label="Reservar ahora" />);
     expect(screen.getByRole("button", { name: "Reservar ahora" })).toBeTruthy();
   });
+
+  it("aplica aria-label cuando se provee, sobreescribiendo el nombre accesible", () => {
+    const pediatria = getSpecialtyBySlug("pediatria")!;
+    render(
+      <BookingButton specialty={pediatria} label="Agendar" ariaLabel="Agendar Pediatría" />
+    );
+    expect(screen.getByRole("button", { name: "Agendar Pediatría" })).toBeTruthy();
+  });
 });
