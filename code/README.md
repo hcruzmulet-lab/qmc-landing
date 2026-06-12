@@ -34,3 +34,25 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Agendamiento online (Cal.com)
+
+El selector de citas (`#agendar`) usa el embed gratuito de **Cal.com**. Config manual,
+una sola vez:
+
+1. Crear cuenta gratis en cal.com con username `qmc-medisuport` (o el que se use).
+2. Conectar el Google Calendar de la clínica (sync 2-vías, bloquea slots ocupados).
+3. Crear un event-type por especialidad con **slug = slug de la especialidad**
+   (`pediatria`, `medicina-general`, `gastroenterologia`, `traumatologia`, `fisiatria`,
+   `rehabilitacion`, `laboratorio-clinico`): duración, ubicación = dirección de la clínica,
+   precio en la descripción, **disponibilidad propia por especialidad**, zona
+   `America/Guayaquil`.
+4. Booking questions: nombre, email, **WhatsApp (requerido)**, motivo (opcional).
+5. Poner el username en `.env.local`:
+   ```bash
+   NEXT_PUBLIC_CAL_USERNAME=qmc-medisuport
+   ```
+
+Gestión (cancelar/confirmar/reagendar, habilitar/ocultar especialidades, horarios) se hace
+en el panel de Cal.com — sin tocar código. Para sacar una especialidad del sitio sin tocar
+Cal.com, agregá su slug a `NOT_BOOKABLE` en `lib/booking.ts`.
