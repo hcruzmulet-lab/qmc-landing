@@ -6,7 +6,7 @@ import { InstagramIcon } from "@/components/icons/instagram";
 
 const nav = [
   { href: "#especialidades", label: "Especialidades" },
-  { href: "#como-agendar", label: "Cómo agendar" },
+  { href: "#promociones", label: "Promociones" },
   { href: "#ubicacion", label: "Ubicación" },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 import { useRef, useState, type MouseEvent } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MousePointerClick, CalendarCheck, CheckCircle2 } from "lucide-react";
 import { useMotionValue } from "framer-motion";
 import { specialties } from "@/lib/specialties";
 import { CtaButton } from "@/components/sections/cta-button";
@@ -35,6 +35,25 @@ const fondoImgs = [
 function fotoFallback(nombre: string): string {
   return `https://placehold.co/700x880/103158/FFFFFF?text=${encodeURIComponent(nombre)}`;
 }
+
+// Cómo agendar — 3 pasos (movido desde HowToBook, reescrito para booking online).
+const pasosAgendar = [
+  {
+    icon: MousePointerClick,
+    titulo: "Elige tu especialidad",
+    desc: "Toca “Agendar” en la especialidad que necesitas.",
+  },
+  {
+    icon: CalendarCheck,
+    titulo: "Reserva online",
+    desc: "Escoge el día y la hora disponible que mejor te queden.",
+  },
+  {
+    icon: CheckCircle2,
+    titulo: "Confirma y asiste",
+    desc: "Recibes la confirmación por correo y te esperamos en la clínica.",
+  },
+];
 
 export function SpecialtiesShowcase() {
   const [active, setActive] = useState(0);
@@ -207,6 +226,31 @@ export function SpecialtiesShowcase() {
             </div>
           </div>
         </div>
+
+        {/* Cómo agendar — 3 pasos, junto al directorio donde se reserva */}
+        <ol className="mt-14 grid gap-6 border-t border-[var(--color-border)] pt-10 sm:grid-cols-3">
+          {pasosAgendar.map((p, i) => {
+            const Paso = p.icon;
+            return (
+              <Reveal key={p.titulo} delay={i * 0.08}>
+                <li className="flex h-full flex-col">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary)] font-display text-sm font-bold tabular-nums text-white">
+                      {i + 1}
+                    </span>
+                    <Paso className="h-5 w-5 text-[var(--color-secondary)]" aria-hidden="true" />
+                  </div>
+                  <h3 className="mt-3 font-display text-lg font-bold text-[var(--color-primary)]">
+                    {p.titulo}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[var(--color-muted-foreground)]">
+                    {p.desc}
+                  </p>
+                </li>
+              </Reveal>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

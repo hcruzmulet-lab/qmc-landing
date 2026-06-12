@@ -1,10 +1,20 @@
 "use client";
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, Check } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { promociones, type Promocion } from "@/lib/promociones";
+import { promo, savingsLabel } from "@/lib/promo";
 import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
+import { BorderBeam } from "@/components/ui/border-beam";
+
+// Qué incluye la consulta integral de reapertura (fusionado desde Offer).
+const ofertaIncluye = [
+  "Revisión de oídos",
+  "Revisión de garganta",
+  "Fondo de ojo",
+  "Control de signos vitales",
+];
 
 export function Promociones() {
   const [open, setOpen] = useState<number | null>(null);
@@ -94,6 +104,48 @@ export function Promociones() {
             Paquetes y precios especiales por tiempo limitado. Toca una promo para verla
             completa o agéndala por WhatsApp.
           </p>
+        </Reveal>
+
+        {/* Oferta destacada — consulta integral de reapertura (fusionado desde Offer) */}
+        <Reveal variant="scale" className="mt-10">
+          <div className="relative grid overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-background)] shadow-2xl sm:grid-cols-[1.4fr_1fr]">
+            <BorderBeam size={300} duration={11} />
+            <BorderBeam size={300} duration={11} delay={5.5} colorFrom="#059669" colorTo="#2BD4E6" />
+            <div className="p-8 sm:p-10">
+              <p className="eyebrow">Promo de reapertura</p>
+              <h3 className="mt-2 font-display text-2xl font-bold leading-[1.15] text-[var(--color-primary)] sm:text-3xl">
+                Una revisión completa, en una sola visita
+              </h3>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {ofertaIncluye.map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 text-[var(--color-foreground)]">
+                    <Check className="h-5 w-5 shrink-0 text-[var(--color-secondary)]" aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center gap-4 border-t border-[var(--color-border)] bg-[var(--color-muted)] p-8 sm:border-l sm:border-t-0 sm:p-10">
+              <div>
+                <div className="flex items-end gap-2">
+                  <span className="font-display text-4xl font-bold tabular-nums text-[var(--color-primary)]">
+                    {promo.price}
+                  </span>
+                  <span className="pb-1 text-lg tabular-nums text-[var(--color-muted-foreground)] line-through">
+                    {promo.regularPrice}
+                  </span>
+                </div>
+                <p className="mt-1 text-sm font-semibold text-[var(--color-secondary)]">
+                  {savingsLabel(promo)} · promo de reapertura
+                </p>
+              </div>
+              <CtaButton
+                message={`Hola QMC, quiero mi consulta integral de ${promo.price}. ¿Qué horarios tienen?`}
+                source="offer"
+                className="w-full"
+              />
+            </div>
+          </div>
         </Reveal>
 
         <div className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
