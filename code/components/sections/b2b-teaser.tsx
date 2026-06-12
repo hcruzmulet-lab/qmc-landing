@@ -26,19 +26,38 @@ const sectores = ["Oficinas", "Fábricas", "Retail", "PYMES"];
 
 export function B2bTeaser() {
   return (
-    <section
-      id="empresas"
-      className="relative overflow-hidden text-white"
-      style={{
-        background:
-          "radial-gradient(760px 420px at 88% 0%, rgba(43,212,230,0.18), transparent 60%)," +
-          "radial-gradient(760px 520px at 0% 100%, rgba(33,116,153,0.30), transparent 60%)," +
-          "linear-gradient(180deg, #0C2545 0%, #103158 100%)",
-      }}
-    >
+    <section id="empresas" className="relative overflow-hidden bg-[#0C2545] text-white">
+      {/* Foto de fondo — equipo corporativo con skyline de Quito */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/empresas.jpg"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-right"
+      />
+      {/* Overlay navy: izquierda sólida para el titular, revela la escena a la derecha */}
       <div
         aria-hidden="true"
-        className="bg-grid pointer-events-none absolute inset-0 opacity-50"
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(12,37,69,0.70) 0%, rgba(16,49,88,0.86) 100%)," +
+            "linear-gradient(100deg, #0C2545 0%, rgba(12,37,69,0.80) 42%, rgba(12,37,69,0.22) 100%)",
+        }}
+      />
+      {/* Glows de marca */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(760px 420px at 88% 0%, rgba(43,212,230,0.16), transparent 60%)," +
+            "radial-gradient(760px 520px at 0% 100%, rgba(33,116,153,0.26), transparent 60%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="bg-grid pointer-events-none absolute inset-0 opacity-40"
         style={{ maskImage: "radial-gradient(circle at 60% 38%, #000 32%, transparent 80%)" }}
       />
 
