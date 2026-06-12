@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { promo } from "@/lib/promo";
 
 const faqs = [
@@ -13,6 +13,7 @@ const faqs = [
 
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
+  const reduce = useReducedMotion();
 
   return (
     <section
@@ -45,9 +46,13 @@ export function Faq() {
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
-              <div
+              <motion.div
                 key={i}
-                className={`rounded-2xl border transition-all duration-300 ${
+                initial={reduce ? false : { opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+                className={`rounded-2xl border transition-colors duration-300 ${
                   isOpen
                     ? "border-[var(--color-aqua)]/55 bg-white/[0.06] shadow-[0_0_44px_rgba(43,212,230,0.16)]"
                     : "border-white/10 bg-white/[0.03] hover:border-white/25"
@@ -85,7 +90,7 @@ export function Faq() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>

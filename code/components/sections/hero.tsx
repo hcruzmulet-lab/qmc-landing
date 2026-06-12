@@ -116,7 +116,7 @@ export function Hero() {
           </Reveal>
 
           {/* Foto real + nodos de especialidad orbitando */}
-          <Reveal delay={0.12} className="relative min-w-0">
+          <Reveal delay={0.12} variant="right" className="relative min-w-0">
             <div className="relative min-h-[360px] overflow-hidden rounded-3xl ring-1 ring-white/15 sm:min-h-[480px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

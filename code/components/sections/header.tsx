@@ -4,10 +4,10 @@ import { site } from "@/lib/site";
 import { CtaButton } from "@/components/sections/cta-button";
 
 const navLinks = [
+  { href: "#promociones", label: "Promociones" },
   { href: "#especialidades", label: "Especialidades" },
   { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#como-agendar", label: "Cómo agendar" },
-  { href: "#ubicacion", label: "Ubicación" },
 ];
 
 export function Header() {

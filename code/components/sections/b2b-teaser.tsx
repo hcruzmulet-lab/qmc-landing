@@ -13,7 +13,7 @@ export function B2bTeaser() {
     <section id="empresas" className="bg-[var(--color-primary)] text-white">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-2">
-          <Reveal className="space-y-4">
+          <Reveal variant="left" className="space-y-4">
             <Building2 className="h-9 w-9 text-[#6FB0CE]" aria-hidden="true" />
             <h2 className="font-display text-3xl font-bold sm:text-4xl">
               Convenios para empresas
@@ -35,7 +35,7 @@ export function B2bTeaser() {
               ))}
             </ul>
           </Reveal>
-          <Reveal delay={0.1} className="lg:justify-self-end">
+          <Reveal delay={0.1} variant="right" className="lg:justify-self-end">
             <CtaButton
               message="Hola QMC, represento a una empresa y quiero información sobre convenios y chequeos ocupacionales."
               source="b2b"

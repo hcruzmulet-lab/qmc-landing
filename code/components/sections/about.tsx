@@ -47,7 +47,7 @@ export function About() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12 flex justify-center">
+        <Reveal delay={0.1} variant="scale" className="mt-12 flex justify-center">
           <CircularTestimonials testimonials={slides} autoplay />
         </Reveal>
       </div>

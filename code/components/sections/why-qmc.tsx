@@ -13,7 +13,7 @@ export function WhyQmc() {
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Foto real de la clínica */}
-          <Reveal className="order-last lg:order-first">
+          <Reveal variant="left" className="order-last lg:order-first">
             <div className="overflow-hidden rounded-3xl border border-[var(--color-border)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -28,7 +28,7 @@ export function WhyQmc() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} variant="right">
             <h2 className="font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
               El cuidado que tu familia merece
             </h2>

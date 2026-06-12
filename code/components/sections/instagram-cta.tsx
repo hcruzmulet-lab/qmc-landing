@@ -6,7 +6,7 @@ export function InstagramCta() {
   return (
     <section id="instagram" className="bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-        <Reveal className="flex flex-col items-center text-center">
+        <Reveal variant="scale" className="flex flex-col items-center text-center">
           <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-secondary)]/12 text-[var(--color-secondary)]">
             <InstagramIcon className="h-7 w-7" />
           </span>

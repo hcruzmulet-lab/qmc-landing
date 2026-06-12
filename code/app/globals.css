@@ -193,9 +193,16 @@
    para que Tailwind v4 / Lightning CSS NO pode el keyframe. */
 @theme {
   --animate-border-beam: border-beam calc(var(--duration, 12) * 1s) infinite linear;
+  --animate-promo-marquee: promo-marquee var(--marquee-duration, 40s) linear infinite;
   @keyframes border-beam {
     to {
       offset-distance: 100%;
+    }
+  }
+  /* Marquee de promociones: desplaza la pista (duplicada) una mitad = bucle continuo. */
+  @keyframes promo-marquee {
+    to {
+      transform: translateX(-50%);
     }
   }
 }

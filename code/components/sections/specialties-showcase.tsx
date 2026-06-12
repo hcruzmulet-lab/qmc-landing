@@ -58,7 +58,7 @@ export function SpecialtiesShowcase() {
       <InfiniteGridBackground images={fondoImgs} mouseX={mouseX} mouseY={mouseY} />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:py-24">
-        <Reveal className="max-w-2xl">
+        <Reveal variant="left" className="max-w-2xl">
           <h2 className="font-display text-4xl font-bold leading-[1.05] text-[var(--color-primary)] sm:text-5xl">
             Siete especialidades,
             <br />

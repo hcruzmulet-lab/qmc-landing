@@ -7,7 +7,7 @@ export function Location() {
   return (
     <section id="ubicacion" className="bg-[var(--color-background)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
-        <Reveal className="max-w-2xl">
+        <Reveal variant="left" className="max-w-2xl">
           <h2 className="font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
             Visítanos en Quito
           </h2>
@@ -17,7 +17,7 @@ export function Location() {
         </Reveal>
 
         {/* Fachada real */}
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} variant="scale">
           <div className="mt-8 overflow-hidden rounded-3xl border border-[var(--color-border)]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -33,7 +33,7 @@ export function Location() {
         </Reveal>
 
         <div className="mt-8 grid gap-8 md:grid-cols-2">
-          <Reveal>
+          <Reveal variant="left">
             <ul className="space-y-4 text-sm text-[var(--color-foreground)]">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-secondary)]" aria-hidden="true" />
@@ -53,7 +53,7 @@ export function Location() {
               </li>
             </ul>
           </Reveal>
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} variant="right">
             <div className="overflow-hidden rounded-2xl border border-[var(--color-border)]">
               <iframe
                 title="Ubicación QMC en Quito"

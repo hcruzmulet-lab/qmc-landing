@@ -29,7 +29,7 @@ export function Offer() {
         style={{ maskImage: "radial-gradient(circle at 50% 50%, #000 35%, transparent 80%)" }}
       />
       <div className="relative z-10 mx-auto max-w-5xl px-4 py-16 sm:py-20">
-        <Reveal>
+        <Reveal variant="scale">
           <div className="relative grid overflow-hidden rounded-3xl border border-white/10 bg-[var(--color-background)] shadow-2xl sm:grid-cols-[1.4fr_1fr]">
             <BorderBeam size={300} duration={11} />
             <BorderBeam size={300} duration={11} delay={5.5} colorFrom="#059669" colorTo="#2BD4E6" />

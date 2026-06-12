@@ -1,5 +1,6 @@
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
+import { Promociones } from "@/components/sections/promociones";
 import { SpecialtiesShowcase } from "@/components/sections/specialties-showcase";
 import { About } from "@/components/sections/about";
 import { Offer } from "@/components/sections/offer";
@@ -21,6 +22,7 @@ export default function Home() {
       <Header />
       <main className="pb-20 lg:pb-0">
         <Hero />
+        <Promociones />
         <SpecialtiesShowcase />
         <About />
         <WhyQmc />
