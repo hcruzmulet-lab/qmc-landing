@@ -22,6 +22,7 @@ export type Specialty = {
   faqs: SpecialtyFaq[];
   doctorIds: string[]; // referencia a lib/doctors.ts
   foto?: string; // imagen hero de la página de especialidad (Fase 2)
+  calEventSlug?: string; // slug del event-type en Cal.com si difiere del slug de la especialidad
   incluye?: string[]; // qué incluye la consulta (opcional)
   metaTitle: string;
   metaDescription: string;
