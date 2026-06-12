@@ -3,13 +3,14 @@ import { Reveal } from "@/components/sections/reveal";
 
 export function Insurances() {
   return (
-    <section id="seguros" className="bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-        <Reveal>
-          <h2 className="text-center font-[var(--font-heading)] text-2xl font-bold text-[var(--color-primary)]">
+    <section id="seguros" className="bg-[var(--color-background)]">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <p className="eyebrow">Cobertura</p>
+          <h2 className="mt-3 font-display text-2xl font-bold text-[var(--color-primary)] sm:text-3xl">
             Trabajamos con tus seguros
           </h2>
-          <p className="mt-2 text-center text-[var(--color-muted-foreground)]">
+          <p className="mt-3 text-[var(--color-muted-foreground)]">
             ¿Tienes seguro médico? Escríbenos y confirmamos tu cobertura.
           </p>
         </Reveal>

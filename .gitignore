@@ -4,3 +4,7 @@ node_modules
 .DS_Store
 dist
 .claude/
+# Notas del harness (no del proyecto)
+/memory/
+# Originales pesados de marca (versiones optimizadas en code/public/clinic)
+/doc/logos/

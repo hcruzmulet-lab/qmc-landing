@@ -10,11 +10,14 @@ const faqs = [
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white">
-      <div className="mx-auto max-w-3xl px-4 py-12 sm:py-16">
-        <h2 className="text-center font-[var(--font-heading)] text-3xl font-bold text-[var(--color-foreground)]">
-          Preguntas frecuentes
-        </h2>
+    <section id="faq" className="bg-[var(--color-surface)]">
+      <div className="mx-auto max-w-3xl px-4 py-16 sm:py-20">
+        <div className="text-center">
+          <p className="eyebrow">Dudas</p>
+          <h2 className="mt-3 font-display text-3xl font-bold text-[var(--color-primary)] sm:text-4xl">
+            Preguntas frecuentes
+          </h2>
+        </div>
         <Accordion className="mt-8">
           {faqs.map((f, i) => (
             <AccordionItem key={i} value={`item-${i}`}>

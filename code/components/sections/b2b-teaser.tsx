@@ -14,8 +14,8 @@ export function B2bTeaser() {
       <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <Reveal className="space-y-4">
-            <Building2 className="h-9 w-9 text-[var(--color-secondary)]" aria-hidden="true" />
-            <h2 className="font-[var(--font-heading)] text-3xl font-bold">
+            <Building2 className="h-9 w-9 text-[#6FB0CE]" aria-hidden="true" />
+            <h2 className="font-display text-3xl font-bold sm:text-4xl">
               Convenios para empresas
             </h2>
             <p className="text-white/80">
@@ -26,7 +26,7 @@ export function B2bTeaser() {
               {beneficios.map((b) => (
                 <li key={b} className="flex items-start gap-2 text-white/90">
                   <Check
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-secondary)]"
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[#6FB0CE]"
                     strokeWidth={2.5}
                     aria-hidden="true"
                   />

@@ -5,10 +5,12 @@ import { Reveal } from "@/components/sections/reveal";
 export function InstagramCta() {
   return (
     <section id="instagram" className="bg-[var(--color-surface)]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:py-20">
         <Reveal className="flex flex-col items-center text-center">
-          <InstagramIcon className="h-10 w-10" />
-          <h2 className="mt-4 font-[var(--font-heading)] text-2xl font-bold text-[var(--color-primary)]">
+          <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-secondary)]/12 text-[var(--color-secondary)]">
+            <InstagramIcon className="h-7 w-7" />
+          </span>
+          <h2 className="mt-5 font-display text-2xl font-bold text-[var(--color-primary)] sm:text-3xl">
             Síguenos en Instagram
           </h2>
           <p className="mt-2 max-w-xl text-[var(--color-muted-foreground)]">

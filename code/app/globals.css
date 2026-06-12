@@ -117,23 +117,23 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-/* QMC brand tokens — paleta oficial del manual (doc/logos)
-   Nota: --color-accent (verde WhatsApp) sobreescribe a propósito el 'accent'
-   semántico de shadcn; los componentes shadcn no se usan en la landing.
-   Modo oscuro diferido: estos tokens son hex fijos sin variante en .dark a
-   propósito (el sitio es solo claro en v1). */
+/* QMC brand tokens — paleta OFICIAL del manual de marca (doc/logos)
+   Navy #103158 + teal #217499 + gris-azul #a4b1bf + blanco.
+   --color-accent (verde WhatsApp) se mantiene SOLO para botones de conversión.
+   Modo oscuro diferido: hex fijos sin variante en .dark (sitio solo claro v1). */
 :root {
-  --color-primary: #103158;        /* azul marino — títulos, header, footer */
-  --color-on-primary: #FFFFFF;
-  --color-secondary: #217499;      /* teal — enlaces, íconos, detalles */
+  --color-primary: #103158;        /* navy — marca, header/footer, titulares, panel hero */
+  --color-on-primary: #FFFFFF;     /* blanco — texto sobre navy */
+  --color-secondary: #217499;      /* teal — eyebrows, enlaces, íconos, detalles */
+  --color-aqua: #2BD4E6;           /* aqua vivo — glows, gradientes, acentos sobre navy (familia azul, no rompe marca) */
+  --color-neutral: #A4B1BF;        /* gris-azul de marca — eyebrows sobre navy, separadores */
   --color-accent: #059669;         /* verde WhatsApp — botones de conversión (NO cambiar) */
-  --color-neutral: #A4B1BF;        /* gris-azul — bordes suaves, texto secundario */
-  --color-background: #FFFFFF;
-  --color-surface: #F6F8FA;        /* fondos de sección alternos */
-  --color-foreground: #14253B;     /* texto principal (navy slate, legible en cuerpo largo) */
-  --color-muted: #F1F5F9;
-  --color-muted-foreground: #5B6B7B;
-  --color-border: #E2E8F0;
+  --color-background: #FFFFFF;     /* blanco — fondo base */
+  --color-surface: #F4F7FA;        /* azul muy claro — secciones alternas */
+  --color-foreground: #0F2236;     /* navy casi negro — texto principal (16:1) */
+  --color-muted: #EEF3F8;          /* azul lavado — superficies suaves, chips */
+  --color-muted-foreground: #4A5A6A; /* gris pizarra — texto secundario (7:1) */
+  --color-border: #DCE5EE;         /* azul-gris claro — bordes hairline */
   --color-destructive: #DC2626;
 }
 
@@ -144,12 +144,58 @@
   body {
     background: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
-  html {
-    @apply font-sans;
+  ::selection {
+    background: var(--color-secondary);
+    color: var(--color-on-primary);
+  }
+}
+
+@layer components {
+  /* Display — Sora bold, geométrico. Titulares con tracking ceñido. */
+  .font-display {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+  /* Gradiente de marca teal→aqua para palabras clave en titulares. */
+  .text-gradient-brand {
+    background: linear-gradient(100deg, #39B8D4 0%, var(--color-aqua) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  /* Malla sutil para fondos navy de alto impacto (estilo TravelTech). */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  /* Eyebrow — etiqueta de sección en teal, versalita espaciada.
+     Sobre navy, sobrescribir con text-[var(--color-neutral)]. */
+  .eyebrow {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-secondary);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+}
+
+/* Border beam — luz que recorre el borde (offset-path). Registrado en @theme
+   para que Tailwind v4 / Lightning CSS NO pode el keyframe. */
+@theme {
+  --animate-border-beam: border-beam calc(var(--duration, 12) * 1s) infinite linear;
+  @keyframes border-beam {
+    to {
+      offset-distance: 100%;
+    }
+  }
 }
