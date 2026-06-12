@@ -6,6 +6,7 @@ import { CtaButton } from "@/components/sections/cta-button";
 const navLinks = [
   { href: "#promociones", label: "Promociones" },
   { href: "#especialidades", label: "Especialidades" },
+  { href: "#agendar", label: "Agendar" },
   { href: "#quienes-somos", label: "Quiénes somos" },
   { href: "#como-agendar", label: "Cómo agendar" },
 ];

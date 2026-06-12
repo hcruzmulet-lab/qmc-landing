@@ -50,7 +50,7 @@ export function AgendaSection() {
                       {s.precio}
                     </span>
                     <BookingButton
-                      specialty={s}
+                      specialty={{ slug: s.slug, nombre: s.nombre, calEventSlug: s.calEventSlug }}
                       label="Agendar"
                       ariaLabel={`Agendar ${s.nombre}`}
                       className="px-4"

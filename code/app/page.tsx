@@ -4,6 +4,7 @@ import { Promociones } from "@/components/sections/promociones";
 import { SpecialtiesShowcase } from "@/components/sections/specialties-showcase";
 import { About } from "@/components/sections/about";
 import { Offer } from "@/components/sections/offer";
+import { AgendaSection } from "@/components/booking/agenda-section";
 import { HowToBook } from "@/components/shared/how-to-book";
 import { MedicalTeam } from "@/components/sections/medical-team";
 import { WhyQmc } from "@/components/sections/why-qmc";
@@ -27,6 +28,7 @@ export default function Home() {
         <About />
         <WhyQmc />
         <Offer />
+        <AgendaSection />
         <HowToBook />
         <MedicalTeam />
         <Testimonials />
