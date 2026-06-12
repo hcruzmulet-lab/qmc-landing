@@ -7,6 +7,8 @@ import { specialties } from "@/lib/specialties";
 import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
 import { InfiniteGridBackground } from "@/components/ui/infinite-grid-background";
+import { BookingButton } from "@/components/booking/booking-button";
+import { BookingEmbedInit } from "@/components/booking/booking-embed-init";
 
 // Fotos REALES de la clínica (public/clinic). Reutilizamos los espacios físicos
 // que mejor representan cada especialidad. Si una falla, cae a un tile branded.
@@ -56,6 +58,8 @@ export function SpecialtiesShowcase() {
       className="relative overflow-hidden bg-[var(--color-background)]"
     >
       <InfiniteGridBackground images={fondoImgs} mouseX={mouseX} mouseY={mouseY} />
+      {/* Inicializa el embed de Cal.com una sola vez para toda la sección */}
+      <BookingEmbedInit />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <Reveal variant="left" className="max-w-2xl">
@@ -78,13 +82,12 @@ export function SpecialtiesShowcase() {
                 const Icon = s.icon;
                 const isActive = i === active;
                 return (
-                  <li key={s.slug} className="border-b border-[var(--color-border)] first:border-t">
-                    <Link
-                      href={`/especialidades/${s.slug}`}
-                      onMouseEnter={() => setActive(i)}
-                      onFocus={() => setActive(i)}
-                      className="group flex items-start gap-4 py-5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-secondary)]"
-                    >
+                  <li
+                    key={s.slug}
+                    onMouseEnter={() => setActive(i)}
+                    className="border-b border-[var(--color-border)] first:border-t"
+                  >
+                    <div className="group flex items-start gap-4 py-5">
                       <Icon
                         className={`mt-1 h-5 w-5 shrink-0 transition-colors ${
                           isActive ? "text-[var(--color-secondary)]" : "text-[var(--color-muted-foreground)]"
@@ -99,8 +102,13 @@ export function SpecialtiesShowcase() {
                         aria-hidden="true"
                         className="h-14 w-14 shrink-0 rounded-xl object-cover lg:hidden"
                       />
-                      <span className="min-w-0 flex-1">
-                        <span className="flex items-baseline justify-between gap-3">
+                      {/* Nombre + descripción → página de detalle */}
+                      <Link
+                        href={`/especialidades/${s.slug}`}
+                        onFocus={() => setActive(i)}
+                        className="min-w-0 flex-1 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-secondary)]"
+                      >
+                        <span className="flex items-baseline gap-2">
                           <span
                             className={`font-display text-2xl font-medium transition-colors ${
                               isActive ? "text-[var(--color-secondary)]" : "text-[var(--color-primary)]"
@@ -108,19 +116,28 @@ export function SpecialtiesShowcase() {
                           >
                             {s.nombre}
                           </span>
-                          <span className="shrink-0 font-display text-lg font-medium tabular-nums text-[var(--color-primary)]">
-                            {s.precio}
-                          </span>
+                          <ArrowUpRight
+                            className="hidden h-5 w-5 shrink-0 text-[var(--color-secondary)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 lg:block"
+                            aria-hidden="true"
+                          />
                         </span>
                         <span className="mt-1 block max-w-md text-sm leading-relaxed text-[var(--color-muted-foreground)]">
                           {s.descCorta}
                         </span>
-                      </span>
-                      <ArrowUpRight
-                        className="mt-1 hidden h-5 w-5 shrink-0 text-[var(--color-secondary)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 lg:block"
-                        aria-hidden="true"
-                      />
-                    </Link>
+                      </Link>
+                      {/* Precio + CTA de agendamiento (abre popup Cal.com) */}
+                      <div className="flex shrink-0 flex-col items-end gap-2">
+                        <span className="font-display text-lg font-medium tabular-nums text-[var(--color-primary)]">
+                          {s.precio}
+                        </span>
+                        <BookingButton
+                          specialty={s}
+                          label="Agendar"
+                          ariaLabel={`Agendar ${s.nombre}`}
+                          className="px-4 text-sm"
+                        />
+                      </div>
+                    </div>
                   </li>
                 );
               })}
@@ -170,13 +187,21 @@ export function SpecialtiesShowcase() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={`/especialidades/${activa.slug}`}
-                    className="mt-5 inline-flex items-center gap-1.5 font-semibold text-[var(--color-secondary)] underline-offset-4 hover:text-[var(--color-primary)] hover:underline"
-                  >
-                    Ver {activa.nombre}
-                    <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
+                  <div className="mt-5 flex flex-col gap-3">
+                    <BookingButton
+                      specialty={activa}
+                      label={`Agendar ${activa.nombre}`}
+                      ariaLabel={`Agendar ${activa.nombre}`}
+                      className="w-full"
+                    />
+                    <Link
+                      href={`/especialidades/${activa.slug}`}
+                      className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-secondary)] underline-offset-4 hover:text-[var(--color-primary)] hover:underline"
+                    >
+                      Ver {activa.nombre}
+                      <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  </div>
                 </figcaption>
               </figure>
             </div>
