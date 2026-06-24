@@ -9,6 +9,6 @@ describe("StickyMobileCta", () => {
     const tel = screen.getByRole("link", { name: /llamar/i });
     expect(tel.getAttribute("href")).toBe(`tel:${site.phoneE164}`);
     const wa = screen.getByRole("link", { name: /whatsapp/i });
-    expect(wa.getAttribute("href")).toContain("wa.me/593958875624");
+    expect(wa.getAttribute("href")).toContain(`wa.me/${site.whatsappE164}`);
   });
 });

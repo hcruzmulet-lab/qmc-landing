@@ -1,24 +1,29 @@
-import { Stethoscope, BadgePercent, Zap } from "lucide-react";
+import { Stethoscope, BadgePercent, HeartPulse, Handshake } from "lucide-react";
 import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
 import { BorderBeam } from "@/components/ui/border-beam";
 
-// Qué incluye el convenio — íconos distintos por beneficio (no checklist plano).
+// Qué incluye el convenio — beneficios reales de la propuesta corporativa QMC.
 const incluye = [
   {
-    icon: Stethoscope,
-    title: "Chequeos ocupacionales",
-    desc: "Evaluaciones médicas para tu personal, coordinadas en bloque.",
-  },
-  {
     icon: BadgePercent,
-    title: "Tarifas corporativas",
-    desc: "Atención preventiva con precios pensados para tu nómina.",
+    title: "Precios preferenciales",
+    desc: "Tarifas especiales para los colaboradores de empresas aliadas y sus dependientes.",
   },
   {
-    icon: Zap,
-    title: "Coordinación ágil",
-    desc: "Un canal directo por WhatsApp para agendar a tu equipo.",
+    icon: Stethoscope,
+    title: "Medicina ocupacional",
+    desc: "Exámenes de ingreso, periódicos y de retiro para cumplir con la normativa.",
+  },
+  {
+    icon: HeartPulse,
+    title: "Atención integral",
+    desc: "Más de 30 especialidades, laboratorio, imagenología y rehabilitación en un solo lugar.",
+  },
+  {
+    icon: Handshake,
+    title: "Socios estratégicos",
+    desc: "Trato preferencial y servicio personalizado al firmar el convenio.",
   },
 ];
 
@@ -71,8 +76,9 @@ export function B2bTeaser() {
               en una sola clínica
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-white/80">
-              Convenios para empresas a la medida: chequeos ocupacionales y atención
-              preventiva con tarifas corporativas, coordinados por un solo canal.
+              Conviértete en socio estratégico de QMC: precios preferenciales,
+              medicina ocupacional y atención integral para tus colaboradores y sus
+              dependientes, con un staff de más de 10 años de experiencia.
             </p>
 
             <div className="mt-8">

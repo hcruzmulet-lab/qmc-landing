@@ -16,10 +16,7 @@ export function SpecialtyCard({ specialty }: { specialty: Specialty }) {
       <p className="mt-2 flex-1 text-sm text-[var(--color-muted-foreground)]">
         {specialty.descCorta}
       </p>
-      <div className="mt-4 flex items-center justify-between">
-        <span className="font-[var(--font-heading)] font-semibold tabular-nums text-[var(--color-primary)]">
-          {specialty.precio}
-        </span>
+      <div className="mt-4 flex items-center justify-end">
         <span className="inline-flex items-center gap-1 text-sm font-semibold text-[var(--color-secondary)]">
           Ver más
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />

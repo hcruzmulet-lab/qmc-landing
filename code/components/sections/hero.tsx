@@ -35,10 +35,11 @@ const nodes = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#0C2545] text-white">
-      {/* Imagen de cover (Unsplash, temática clínica) con blur leve */}
+      {/* Imagen de cover — foto REAL de la clínica (fachada en Quito), blur leve.
+          Va muy oscurecida por el overlay navy: solo aporta textura de marca. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?q=80&w=1920&auto=format&fit=crop"
+        src="/clinic/fachada.jpg"
         alt=""
         aria-hidden="true"
         decoding="async"
@@ -77,8 +78,9 @@ export function Hero() {
             </h1>
 
             <p className="mt-5 max-w-md text-base leading-relaxed text-white/75 sm:text-lg">
-              Siete especialidades médicas bajo un mismo techo en Quito. Atención
-              cercana, preventiva y sin vueltas: agendas por WhatsApp y te esperamos.
+              Más de 30 especialidades y servicios médicos bajo un mismo techo en
+              Quito. Atención cercana, preventiva y sin vueltas: agendas por
+              WhatsApp y te esperamos.
             </p>
 
             {promo.enabled && (

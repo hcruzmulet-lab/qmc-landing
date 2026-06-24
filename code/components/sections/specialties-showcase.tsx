@@ -1,25 +1,34 @@
 "use client";
 import { useRef, useState, type MouseEvent } from "react";
 import Link from "next/link";
-import { ArrowUpRight, MousePointerClick, CalendarCheck, CheckCircle2 } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  MessageCircle,
+  Search,
+  CheckCircle2,
+} from "lucide-react";
 import { useMotionValue } from "framer-motion";
-import { specialties } from "@/lib/specialties";
+import { principalSpecialties, specialties } from "@/lib/specialties";
+import { buildSpecialtyWhatsAppUrl } from "@/lib/whatsapp";
+import { trackLeadClick } from "@/lib/analytics";
 import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
 import { InfiniteGridBackground } from "@/components/ui/infinite-grid-background";
-import { BookingButton } from "@/components/booking/booking-button";
-import { BookingEmbedInit } from "@/components/booking/booking-embed-init";
+
+// Solo el directorio destacado del home (las `principal`). La cartera completa
+// (más de 30 servicios) vive en /especialidades.
+const destacadas = principalSpecialties();
 
 // Fotos REALES de la clínica (public/clinic). Reutilizamos los espacios físicos
 // que mejor representan cada especialidad. Si una falla, cae a un tile branded.
 const fotos: Record<string, string> = {
-  pediatria: "/clinic/recepcion.jpg",
   "medicina-general": "/clinic/consultorio.jpg",
-  gastroenterologia: "/clinic/pasillo.jpg",
+  pediatria: "/clinic/recepcion.jpg",
+  "ginecologia-obstetricia": "/clinic/consultorio.jpg",
   traumatologia: "/clinic/fisioterapia.jpg",
-  fisiatria: "/clinic/fisioterapia.jpg",
+  dermatologia: "/clinic/consultorio.jpg",
   rehabilitacion: "/clinic/gimnasio.jpg",
-  "laboratorio-clinico": "/clinic/consultorio.jpg",
 };
 
 // Collage del fondo animado (6 espacios reales de la clínica).
@@ -36,28 +45,28 @@ function fotoFallback(nombre: string): string {
   return `https://placehold.co/700x880/103158/FFFFFF?text=${encodeURIComponent(nombre)}`;
 }
 
-// Cómo agendar — 3 pasos (movido desde HowToBook, reescrito para booking online).
+// Cómo agendar — 3 pasos por WhatsApp (canal de conversión de la clínica).
 const pasosAgendar = [
   {
-    icon: MousePointerClick,
+    icon: Search,
     titulo: "Elige tu especialidad",
-    desc: "Toca “Agendar” en la especialidad que necesitas.",
+    desc: "Mira el directorio y encuentra la atención que necesitas.",
   },
   {
-    icon: CalendarCheck,
-    titulo: "Reserva online",
-    desc: "Escoge el día y la hora disponible que mejor te queden.",
+    icon: MessageCircle,
+    titulo: "Escríbenos por WhatsApp",
+    desc: "Toca “Agendar” y te respondemos con los horarios disponibles.",
   },
   {
     icon: CheckCircle2,
     titulo: "Confirma y asiste",
-    desc: "Recibes la confirmación por correo y te esperamos en la clínica.",
+    desc: "Acordamos día y hora, y te esperamos en la clínica en Quito.",
   },
 ];
 
 export function SpecialtiesShowcase() {
   const [active, setActive] = useState(0);
-  const activa = specialties[active];
+  const activa = destacadas[active];
   const sectionRef = useRef<HTMLElement>(null);
   const mouseX = useMotionValue(-600);
   const mouseY = useMotionValue(-600);
@@ -77,19 +86,18 @@ export function SpecialtiesShowcase() {
       className="relative overflow-hidden bg-[var(--color-background)]"
     >
       <InfiniteGridBackground images={fondoImgs} mouseX={mouseX} mouseY={mouseY} />
-      {/* Inicializa el embed de Cal.com una sola vez para toda la sección */}
-      <BookingEmbedInit />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <Reveal variant="left" className="max-w-2xl">
           <h2 className="font-display text-4xl font-bold leading-[1.05] text-[var(--color-primary)] sm:text-5xl">
-            Siete especialidades,
+            Especialistas para
             <br />
-            una sola clínica.
+            toda tu familia.
           </h2>
           <p className="mt-4 max-w-xl text-[var(--color-muted-foreground)]">
-            Recorre el directorio: cada especialidad atiende a tu familia con el
-            mismo cuidado cercano. Pasa el cursor para ver más, o toca para abrir.
+            Estas son nuestras especialidades más buscadas. En QMC encuentras más
+            de 30 servicios médicos, de diagnóstico y de rehabilitación en un mismo
+            lugar.
           </p>
         </Reveal>
 
@@ -97,7 +105,7 @@ export function SpecialtiesShowcase() {
           {/* Directorio — filas */}
           <Reveal className="-my-2">
             <ul>
-              {specialties.map((s, i) => {
+              {destacadas.map((s, i) => {
                 const Icon = s.icon;
                 const isActive = i === active;
                 return (
@@ -144,30 +152,37 @@ export function SpecialtiesShowcase() {
                           {s.descCorta}
                         </span>
                       </Link>
-                      {/* Precio + CTA de agendamiento (abre popup Cal.com) */}
-                      <div className="flex shrink-0 flex-col items-end gap-2">
-                        <span className="font-display text-lg font-medium tabular-nums text-[var(--color-primary)]">
-                          {s.precio}
-                        </span>
-                        <BookingButton
-                          specialty={s}
-                          label="Agendar"
-                          ariaLabel={`Agendar ${s.nombre}`}
-                          className="px-4 text-sm"
-                        />
-                      </div>
+                      {/* CTA de agendamiento por WhatsApp */}
+                      <a
+                        href={buildSpecialtyWhatsAppUrl(s.nombre)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackLeadClick(`especialidad:${s.slug}`)}
+                        aria-label={`Agendar ${s.nombre} por WhatsApp`}
+                        className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-xl bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#047857] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                      >
+                        <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                        Agendar
+                      </a>
                     </div>
                   </li>
                 );
               })}
             </ul>
 
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <CtaButton
                 message="Hola QMC, quiero información sobre sus especialidades."
                 source="especialidades"
                 label="Agendar por WhatsApp"
               />
+              <Link
+                href="/especialidades"
+                className="inline-flex items-center gap-1.5 font-semibold text-[var(--color-secondary)] underline-offset-4 hover:text-[var(--color-primary)] hover:underline"
+              >
+                Ver todas las especialidades ({specialties.length})
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
             </div>
           </Reveal>
 
@@ -207,10 +222,10 @@ export function SpecialtiesShowcase() {
                     ))}
                   </ul>
                   <div className="mt-5 flex flex-col gap-3">
-                    <BookingButton
-                      specialty={activa}
+                    <CtaButton
+                      message={`Hola QMC, quiero agendar una cita de ${activa.nombre}.`}
+                      source={`especialidad-panel:${activa.slug}`}
                       label={`Agendar ${activa.nombre}`}
-                      ariaLabel={`Agendar ${activa.nombre}`}
                       className="w-full"
                     />
                     <Link
@@ -227,7 +242,7 @@ export function SpecialtiesShowcase() {
           </div>
         </div>
 
-        {/* Cómo agendar — 3 pasos, junto al directorio donde se reserva */}
+        {/* Cómo agendar — 3 pasos por WhatsApp */}
         <ol className="mt-14 grid gap-6 border-t border-[var(--color-border)] pt-10 sm:grid-cols-3">
           {pasosAgendar.map((p, i) => {
             const Paso = p.icon;
