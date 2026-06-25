@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Datos sensibles del personal (cédulas) — no versionar
+docs/AGENTS.xlsx

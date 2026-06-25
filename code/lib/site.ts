@@ -1,5 +1,9 @@
 export const site = {
   legalName: "Medisuport International Medical Support S.A.",
+  // Nombre comercial EXACTO confirmado por la clínica (2026-06-24) — debe
+  // coincidir letra por letra con Google Business Profile y demás citaciones
+  // (NAP). Se usa como `name` en el JSON-LD del establecimiento.
+  commercialName: "QMC - MEDISUPORT",
   brand: "QMC Medisuport",
   // Dominio de producción canónico — usado por metadataBase, sitemap, JSON-LD.
   // TODO(content): confirmar dominio final con la clínica (¿con o sin www?).
@@ -8,8 +12,6 @@ export const site = {
   slogan: "¡Tu Salud Primero!",
   phone: "(02) 224-7429",
   phoneE164: "+59322247429",
-  phone2: "(02) 224-7495",
-  phone2E164: "+59322247495",
   whatsapp: "0999772499",
   whatsappE164: "593999772499", // sin +, usado en el link wa.me
   email: "info@quitomedicalcenter.com",
@@ -30,8 +32,8 @@ export const site = {
     addressCountry: "EC",
   },
   // Coordenadas para LocalBusiness/MedicalClinic schema y el mapa.
-  // TODO(content): confirmar lat/lng exactas con el pin real de Google Maps.
-  geo: { lat: -0.1769, lng: -78.483 },
+  // Pin real confirmado por la clínica (Google Maps).
+  geo: { lat: -0.1832, lng: -78.477699 },
   // Horario en formato schema.org (OpeningHoursSpecification).
   openingHours: [
     { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "07:30", closes: "18:00" },
@@ -42,10 +44,11 @@ export const site = {
   // No publicamos lista de aseguradoras: la clínica está abierta a la red de
   // cualquier seguro. Copy genérico y honesto (consultar cobertura).
   insurances: [] as string[],
-  // Sello sanitario / permiso de funcionamiento — confirmar número real
+  // Autorización sanitaria. La clínica NO requiere permiso ARCSA (solo aplica a
+  // farmacia externa); opera con farmacia interna y autorización ACESS según su
+  // nivel de atención. Confirmado por la clínica (2026-06-24).
   permits: {
-    label: "Permiso de funcionamiento ARCSA",
-    // TODO(content): número de registro real
+    label: "Establecimiento autorizado por ACESS",
     number: "",
   },
 } as const;

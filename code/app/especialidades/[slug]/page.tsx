@@ -15,6 +15,8 @@ import { CtaButton } from "@/components/sections/cta-button";
 import { Reveal } from "@/components/sections/reveal";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbLd, faqPageLd, specialtyServiceLd } from "@/lib/seo";
+import { getDoctorsForSpecialty } from "@/lib/doctors";
+import { DoctorCard } from "@/components/shared/doctor-card";
 
 type Params = { slug: string };
 
@@ -54,6 +56,7 @@ export default async function EspecialidadPage({
 
   const especialidad = s as Specialty;
   const Icon = especialidad.icon;
+  const especialistas = getDoctorsForSpecialty(especialidad.slug);
 
   const schema: object[] = [
     breadcrumbLd([
@@ -143,6 +146,27 @@ export default async function EspecialidadPage({
               </Reveal>
             )}
           </div>
+
+          {/* Especialistas de esta área (E-E-A-T) */}
+          {especialistas.length > 0 && (
+            <Reveal>
+              <div className="mt-16">
+                <h2 className="font-display text-2xl font-bold text-[var(--color-primary)]">
+                  {especialistas.length === 1 ? "Especialista que te atiende" : "Especialistas que te atienden"}
+                </h2>
+                <p className="mt-2 text-[var(--color-muted-foreground)]">
+                  Profesionales con registro vigente que atienden {especialidad.nombre} en QMC Medisuport.
+                </p>
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {especialistas.map((d, i) => (
+                    <Reveal key={d.id} delay={i * 0.06}>
+                      <DoctorCard doctor={d} />
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          )}
 
           {/* CTA de cierre */}
           <Reveal>

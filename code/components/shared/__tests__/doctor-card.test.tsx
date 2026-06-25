@@ -21,4 +21,11 @@ describe("DoctorCard", () => {
     const img = screen.getByRole("img", { name: /maría pérez/i });
     expect(img.getAttribute("src")).toContain("maria.jpg");
   });
+
+  it("usa un avatar con iniciales (sin honorífico) cuando no hay foto", () => {
+    const { foto: _omit, ...sinFoto } = doc;
+    render(<DoctorCard doctor={sinFoto} />);
+    expect(screen.queryByRole("img")).toBeNull();
+    expect(screen.getByText("MP")).toBeTruthy();
+  });
 });

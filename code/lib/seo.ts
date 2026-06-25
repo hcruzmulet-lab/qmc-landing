@@ -1,5 +1,10 @@
 import { site } from "@/lib/site";
 import { specialties, type Specialty } from "@/lib/specialties";
+import { doctors } from "@/lib/doctors";
+
+// Honorífico fuera, para el `name` del Physician en el grafo.
+const stripHonorific = (n: string) =>
+  n.replace(/^(Dr|Dra|Psic|Nut|Lcd[ao]|BQF|Mgs)\.?\s+/i, "");
 
 // Helpers para construir bloques JSON-LD (schema.org). Centraliza el grafo de
 // datos estructurados para que un solo lugar defina la identidad de la clínica.
@@ -34,7 +39,8 @@ export function medicalClinicLd() {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
     "@id": CLINIC_ID,
-    name: site.brand,
+    name: site.commercialName,
+    alternateName: site.brand,
     legalName: site.legalName,
     url: site.url,
     logo: `${site.url}/logo.png`,
@@ -58,6 +64,14 @@ export function medicalClinicLd() {
       "@type": "MedicalProcedure",
       name: s.nombre,
       url: `${site.url}/especialidades/${s.slug}`,
+    })),
+    // Cuerpo médico real — refuerza Expertise/Trust (E-E-A-T) en YMYL.
+    employee: doctors.map((d) => ({
+      "@type": "Physician",
+      name: stripHonorific(d.nombre),
+      medicalSpecialty: d.especialidades
+        .map((slug) => specialties.find((s) => s.slug === slug)?.nombre)
+        .filter(Boolean),
     })),
   };
 }
