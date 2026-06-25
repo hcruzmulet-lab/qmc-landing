@@ -2,7 +2,6 @@ import { Target, Eye, HeartHandshake } from "lucide-react";
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/sections/reveal";
 import { CircularTestimonials, type CircularSlide } from "@/components/ui/circular-testimonials";
-import { MedicalTeam } from "@/components/sections/medical-team";
 
 // Facetas de la clínica (fotos reales). No son testimonios: cuentan quiénes somos.
 const slides: CircularSlide[] = [
@@ -125,9 +124,8 @@ export function About() {
           <CircularTestimonials testimonials={slides} autoplay />
         </Reveal>
       </div>
-
-      {/* Equipo médico — parte de Quiénes somos (renderiza null si no hay médicos) */}
-      <MedicalTeam />
+      {/* El equipo médico ahora se muestra contextualizado en cada página de
+          especialidad (/especialidades/[slug]), no en el home. */}
     </section>
   );
 }
