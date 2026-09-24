@@ -10,7 +10,10 @@ export type Promo = {
 
 // ── EDIT THE PROMO HERE (single source of truth) ──────────────
 export const promo: Promo = {
-  enabled: true,
+  // Apagado (2026-09-23): la clínica pidió ocultar promos y precios por ahora.
+  // Con false se ocultan el pill del hero, la pregunta del FAQ y los mensajes
+  // de WhatsApp que citan el precio. La sección Promociones sale del home.
+  enabled: false,
   price: "$10",
   regularPrice: "$25",
   reason: "por reapertura",

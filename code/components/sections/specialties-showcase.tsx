@@ -90,14 +90,13 @@ export function SpecialtiesShowcase() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <Reveal variant="left" className="max-w-2xl">
           <h2 className="font-display text-4xl font-bold leading-[1.05] text-[var(--color-primary)] sm:text-5xl">
-            Especialistas para
+            Las especialidades
             <br />
-            toda tu familia.
+            más buscadas.
           </h2>
           <p className="mt-4 max-w-xl text-[var(--color-muted-foreground)]">
-            Estas son nuestras especialidades más buscadas. En QMC encuentras más
-            de 30 servicios médicos, de diagnóstico y de rehabilitación en un mismo
-            lugar.
+            Y más de 30 servicios médicos, de diagnóstico y de rehabilitación en
+            un mismo lugar.
           </p>
         </Reveal>
 
@@ -159,7 +158,7 @@ export function SpecialtiesShowcase() {
                         rel="noopener noreferrer"
                         onClick={() => trackLeadClick(`especialidad:${s.slug}`)}
                         aria-label={`Agendar ${s.nombre} por WhatsApp`}
-                        className="inline-flex min-h-10 shrink-0 items-center gap-1.5 rounded-xl bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#047857] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                        className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-xl border border-[var(--color-accent)]/40 px-4 py-2 text-sm font-semibold text-[#047857] transition-colors hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
                       >
                         <MessageCircle className="h-4 w-4" aria-hidden="true" />
                         Agendar
@@ -210,7 +209,7 @@ export function SpecialtiesShowcase() {
                   <p className="text-sm leading-relaxed text-[var(--color-foreground)]">
                     {activa.descLarga}
                   </p>
-                  <p className="eyebrow mt-5">Qué tratamos</p>
+                  <p className="mt-5 text-sm font-semibold text-[var(--color-primary)]">Qué tratamos</p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {activa.queTratamos.slice(0, 5).map((q) => (
                       <li

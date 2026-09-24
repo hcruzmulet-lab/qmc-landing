@@ -21,7 +21,7 @@ export const site = {
     "Gaspar Cañero E10-114 y Av. 6 de Diciembre, Sector Iñaquito, Quito, Pichincha",
   // Referencia para quien busca: diagonal al Colegio Sebastián de Benalcázar.
   addressReference: "Diagonal al Colegio Sebastián de Benalcázar",
-  hours: "Lun–Vie 7:30–18:00 · Sáb 8:00–16:00",
+  hours: "Lun a Vie 7:30 a 18:00 · Sáb 8:00 a 16:00",
   hoursNote: "Atención por cita previa",
   mapsQuery: "Quito Medical Center, Av. 6 de Diciembre, Quito",
   // Componentes de la dirección para schema.org PostalAddress.

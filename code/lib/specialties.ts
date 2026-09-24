@@ -82,7 +82,7 @@ export const specialties = [
       { q: "¿Emiten certificados médicos?", a: "Sí, emitimos certificados médicos válidos." },
     ],
     doctorIds: [],
-    metaTitle: "Médico general en Quito — Medicina General | QMC Medisuport",
+    metaTitle: "Médico general en Quito: Medicina General | QMC Medisuport",
     metaDescription:
       "Consulta de medicina general en Quito: chequeos, control de presión y glucosa, certificados médicos. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -150,7 +150,7 @@ export const specialties = [
       { q: "¿Necesito cita previa?", a: "Sí, agéndala fácil por WhatsApp y te confirmamos el horario." },
     ],
     doctorIds: [],
-    metaTitle: "Pediatra en Quito — Pediatría | QMC Medisuport",
+    metaTitle: "Pediatra en Quito: Pediatría | QMC Medisuport",
     metaDescription:
       "Pediatra en Quito para el cuidado de tus hijos: controles, vacunas y enfermedades de la infancia. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -176,7 +176,7 @@ export const specialties = [
       { q: "¿Necesito cita?", a: "Sí, agéndala por WhatsApp y coordinamos tu horario." },
     ],
     doctorIds: [],
-    metaTitle: "Ginecólogo en Quito — Ginecología y Obstetricia | QMC Medisuport",
+    metaTitle: "Ginecólogo y obstetra en Quito | QMC Medisuport",
     metaDescription:
       "Ginecología y obstetricia en Quito: control ginecológico, embarazo y planificación familiar. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -202,7 +202,7 @@ export const specialties = [
       { q: "¿Hacen radiografías?", a: "Sí, contamos con imagenología para apoyar tu diagnóstico." },
     ],
     doctorIds: [],
-    metaTitle: "Traumatólogo en Quito — Traumatología | QMC Medisuport",
+    metaTitle: "Traumatólogo en Quito: Traumatología | QMC Medisuport",
     metaDescription:
       "Traumatólogo en Quito para fracturas, esguinces y lesiones deportivas, incluida traumatología infantil. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -227,7 +227,7 @@ export const specialties = [
       { q: "¿Incluye terapias?", a: "Diseñamos un plan que puede incluir terapia física de seguimiento." },
     ],
     doctorIds: [],
-    metaTitle: "Fisiatra en Quito — Fisiatría | QMC Medisuport",
+    metaTitle: "Fisiatra en Quito: Fisiatría | QMC Medisuport",
     metaDescription:
       "Fisiatra en Quito para dolor crónico, rehabilitación y recuperación de lesiones. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -249,7 +249,7 @@ export const specialties = [
       "Manchas y lesiones cutáneas",
     ],
     doctorIds: [],
-    metaTitle: "Dermatólogo en Quito — Dermatología | QMC Medisuport",
+    metaTitle: "Dermatólogo en Quito: Dermatología | QMC Medisuport",
     metaDescription:
       "Dermatólogo en Quito para acné, dermatitis, control de lunares y salud de la piel. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -270,7 +270,7 @@ export const specialties = [
       "Fibromialgia",
     ],
     doctorIds: [],
-    metaTitle: "Reumatólogo en Quito — Reumatología | QMC Medisuport",
+    metaTitle: "Reumatólogo en Quito: Reumatología | QMC Medisuport",
     metaDescription:
       "Reumatólogo en Quito para artritis, dolor articular y enfermedades autoinmunes. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -295,7 +295,7 @@ export const specialties = [
       { q: "¿Debo ir en ayunas?", a: "Para algunos estudios sí; te lo indicamos al agendar." },
     ],
     doctorIds: [],
-    metaTitle: "Gastroenterólogo en Quito — Gastroenterología | QMC Medisuport",
+    metaTitle: "Gastroenterólogo en Quito | QMC Medisuport",
     metaDescription:
       "Gastroenterólogo en Quito para gastritis, reflujo, colon irritable y endoscopía. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -316,7 +316,7 @@ export const specialties = [
       "Osteoporosis",
     ],
     doctorIds: [],
-    metaTitle: "Endocrinólogo en Quito — Endocrinología | QMC Medisuport",
+    metaTitle: "Endocrinólogo en Quito: Endocrinología | QMC Medisuport",
     metaDescription:
       "Endocrinólogo en Quito para diabetes, tiroides y trastornos hormonales. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -337,7 +337,7 @@ export const specialties = [
       "Inmunoterapia",
     ],
     doctorIds: [],
-    metaTitle: "Alergólogo en Quito — Alergología | QMC Medisuport",
+    metaTitle: "Alergólogo en Quito: Alergología | QMC Medisuport",
     metaDescription:
       "Alergólogo en Quito para rinitis, asma y alergias de piel. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -358,7 +358,7 @@ export const specialties = [
       "Dificultad para respirar",
     ],
     doctorIds: [],
-    metaTitle: "Neumólogo en Quito — Neumología | QMC Medisuport",
+    metaTitle: "Neumólogo en Quito: Neumología | QMC Medisuport",
     metaDescription:
       "Neumólogo en Quito para asma, EPOC y espirometría. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -379,7 +379,7 @@ export const specialties = [
       "Salud sexual masculina",
     ],
     doctorIds: [],
-    metaTitle: "Urólogo en Quito — Urología | QMC Medisuport",
+    metaTitle: "Urólogo en Quito: Urología | QMC Medisuport",
     metaDescription:
       "Urólogo en Quito para próstata, infecciones urinarias y estudios urológicos. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -400,7 +400,7 @@ export const specialties = [
       "Riesgo cardíaco",
     ],
     doctorIds: [],
-    metaTitle: "Cardiólogo en Quito — Cardiología | QMC Medisuport",
+    metaTitle: "Cardiólogo en Quito: Cardiología | QMC Medisuport",
     metaDescription:
       "Cardiólogo en Quito con electrocardiograma y ecocardiograma. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -442,7 +442,7 @@ export const specialties = [
       "Seguimiento psiquiátrico",
     ],
     doctorIds: [],
-    metaTitle: "Psiquiatra en Quito — Psiquiatría | QMC Medisuport",
+    metaTitle: "Psiquiatra en Quito: Psiquiatría | QMC Medisuport",
     metaDescription:
       "Psiquiatra en Quito para ansiedad, depresión y salud mental. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -463,7 +463,7 @@ export const specialties = [
       "Apoyo emocional infantil",
     ],
     doctorIds: [],
-    metaTitle: "Psicólogo en Quito — Psicología | QMC Medisuport",
+    metaTitle: "Psicólogo en Quito: Psicología | QMC Medisuport",
     metaDescription:
       "Psicólogo en Quito para terapia individual, familiar e infantil. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -484,7 +484,7 @@ export const specialties = [
       "Pérdida de memoria",
     ],
     doctorIds: [],
-    metaTitle: "Neurólogo en Quito — Neurología | QMC Medisuport",
+    metaTitle: "Neurólogo en Quito: Neurología | QMC Medisuport",
     metaDescription:
       "Neurólogo en Quito para migraña, epilepsia y trastornos neurológicos. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -505,7 +505,7 @@ export const specialties = [
       "Hábitos saludables",
     ],
     doctorIds: [],
-    metaTitle: "Nutricionista en Quito — Nutrición | QMC Medisuport",
+    metaTitle: "Nutricionista en Quito: Nutrición | QMC Medisuport",
     metaDescription:
       "Nutricionista en Quito para control de peso y planes de alimentación. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -570,7 +570,7 @@ export const specialties = [
       "Apoyo al diagnóstico",
     ],
     doctorIds: [],
-    metaTitle: "Imagenología en Quito — Ecografía y Radiografía | QMC Medisuport",
+    metaTitle: "Ecografía y radiografía en Quito | QMC Medisuport",
     metaDescription:
       "Imagenología en Quito: ecografías 3D/4D/5D y radiografías. Agenda por WhatsApp en QMC Medisuport.",
   },
@@ -705,7 +705,7 @@ export const specialties = [
       "Manejo del dolor",
     ],
     doctorIds: [],
-    metaTitle: "Medicina Holística en Quito — Ozonoterapia y PRP | QMC Medisuport",
+    metaTitle: "Medicina holística en Quito: ozono y PRP | QMC Medisuport",
     metaDescription:
       "Medicina holística en Quito: ozonoterapia, plasma rico en plaquetas y más. Agenda por WhatsApp en QMC Medisuport.",
   },

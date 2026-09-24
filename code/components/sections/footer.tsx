@@ -6,7 +6,6 @@ import { InstagramIcon } from "@/components/icons/instagram";
 
 const nav = [
   { href: "#especialidades", label: "Especialidades" },
-  { href: "#promociones", label: "Promociones" },
   { href: "#ubicacion", label: "Ubicación" },
 ];
 
@@ -33,7 +32,7 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 shrink-0 text-[var(--color-neutral)]" aria-hidden="true" />
-              <a href={`tel:${site.phoneE164}`} className="hover:text-white">{site.phone}</a>
+              <a href={`tel:${site.phoneE164}`} className="-my-3 inline-flex min-h-11 items-center hover:text-white">{site.phone}</a>
             </li>
             <li className="flex items-center gap-2">
               <Clock className="h-4 w-4 shrink-0 text-[var(--color-neutral)]" aria-hidden="true" />
@@ -47,10 +46,10 @@ export function Footer() {
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-neutral)]">
             Secciones
           </p>
-          <ul className="mt-4 space-y-2 text-sm">
+          <ul className="mt-2 text-sm">
             {nav.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-white/80 transition-colors hover:text-white">
+                <a href={l.href} className="inline-flex min-h-11 items-center text-white/80 transition-colors hover:text-white">
                   {l.label}
                 </a>
               </li>
@@ -60,7 +59,7 @@ export function Footer() {
             href={site.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-5 inline-flex items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
+            className="mt-3 inline-flex min-h-11 items-center gap-2 text-sm text-white/80 transition-colors hover:text-white"
           >
             <InstagramIcon className="h-5 w-5" />
             {site.instagramHandle}

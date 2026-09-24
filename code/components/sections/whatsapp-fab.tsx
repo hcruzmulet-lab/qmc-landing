@@ -3,10 +3,15 @@ import { motion, useReducedMotion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { trackLeadClick } from "@/lib/analytics";
+import { promo } from "@/lib/promo";
 
 export function WhatsAppFab() {
   const reduce = useReducedMotion();
-  const href = buildWhatsAppUrl("Hola QMC, quiero agendar mi consulta integral de $10");
+  const href = buildWhatsAppUrl(
+    promo.enabled
+      ? `Hola QMC, quiero agendar mi consulta integral de ${promo.price}`
+      : "Hola QMC, quiero agendar una cita.",
+  );
   return (
     <motion.a
       href={href}

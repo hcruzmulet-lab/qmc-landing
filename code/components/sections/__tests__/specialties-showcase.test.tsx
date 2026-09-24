@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 describe("SpecialtiesShowcase section", () => {
   it("renderiza el título y enlaces a las páginas de especialidad principales", () => {
     render(<SpecialtiesShowcase />);
-    expect(screen.getByRole("heading", { name: /especialistas|familia/i })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /especialidades/i })).toBeTruthy();
     const hrefs = screen.getAllByRole("link").map((l) => l.getAttribute("href"));
     expect(hrefs).toContain("/especialidades/pediatria");
     // Enlace a la cartera completa.

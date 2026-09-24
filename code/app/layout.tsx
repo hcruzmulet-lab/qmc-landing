@@ -22,14 +22,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "QMC Medisuport — Clínica de especialidades en Quito",
+    default: "QMC Medisuport | Clínica de especialidades en Quito",
     template: "%s | QMC Medisuport",
   },
   description:
     "Más de 30 especialidades y servicios médicos, de diagnóstico, rehabilitación y laboratorio en un mismo lugar en Quito (Av. 6 de Diciembre). Atención cercana y segura. Agenda por WhatsApp.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "QMC Medisuport — Clínica de especialidades en Quito",
+    title: "QMC Medisuport | Clínica de especialidades en Quito",
     description:
       "Especialistas para toda tu familia. Atención cercana y segura. Agenda por WhatsApp.",
     url: site.url,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QMC Medisuport — Clínica de especialidades en Quito",
+    title: "QMC Medisuport | Clínica de especialidades en Quito",
     description:
       "Especialistas para toda tu familia. Atención cercana y segura. Agenda por WhatsApp.",
   },

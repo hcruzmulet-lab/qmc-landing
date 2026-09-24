@@ -22,9 +22,8 @@ Paleta oficial + acento aqua. Hex fijos (sin variante `.dark`).
 | Muted fg | `--color-muted-foreground` | `#4A5A6A` | Texto secundario (7:1) |
 | Border | `--color-border` | `#DCE5EE` | Bordes hairline |
 
-- Gradiente de marca para palabra clave: `#39B8D4 → #2BD4E6` (`.text-gradient-brand`, AA sobre navy).
 - Acento sobre navy: usar aqua o `#6FB0CE` (teal puro no contrasta sobre navy).
-- Secciones navy de impacto: gradiente `#0C2545 → #103158` + glows radiales teal/aqua + grid de puntos (`.bg-grid`).
+- Secciones navy de impacto: gradiente `#0C2545 → #103158` + glows radiales teal/aqua + grid de puntos .
 
 ## Typography
 Pareja en eje de contraste (geométrico display + grotesque cuerpo). Variables en `<html>` (layout.tsx).
@@ -35,10 +34,11 @@ Pareja en eje de contraste (geométrico display + grotesque cuerpo). Variables e
 - `[text-wrap:balance]` en h1.
 
 ## Components
-- **CTA WhatsApp** (`cta-button.tsx`): verde sólido, glow opcional `shadow-[...]`. Único verde de la página.
-- **Hero**: sección navy con cover (Unsplash clínica, blur), glows, nodos de especialidad orbitando foto real, promo destacada (badge aqua), franja de hechos reales (tiles glassy).
+- **CTA WhatsApp** (`cta-button.tsx`): `variant="solid"` (verde sólido, CTA principal de cada sección) u `outline` (borde verde, CTAs repetidos en filas/tarjetas). Único verde de la página; no usar verde en badges.
+- **Hero**: sección navy con cover (fachada real, blur), foto real de recepción (`next/image` priority), máx. 4 elementos de texto; pill de promo solo si `promo.enabled`; fila de hechos reales con divisores (sin tarjetas).
 - **Especialidades**: directorio de filas (hairline) + panel sticky de preview; fondo `InfiniteGridBackground` (puntos animados + collage de fotos reales + reveal con cursor, variante clara).
-- **Quiénes somos**: `CircularTestimonials` (carrusel 3D de fotos reales, cita animada palabra-por-palabra).
+- **Quiénes somos**: misión/visión en columnas con regla superior teal (sin tarjetas) + `CircularTestimonials` (carrusel 3D de fotos reales).
+- **Ocultos del home (componentes en repo)**: Promociones (sin precios públicos por ahora), Testimonios (hasta tener reseñas reales), Instagram CTA.
 - **Consulta integral** (`offer.tsx`): card sobre fondo navy con `BorderBeam` (luz aqua→teal recorriendo el borde).
 - **Testimonios**: 3 columnas con auto-scroll vertical infinito + fade mask; avatares de iniciales (sin caras stock).
 - **FAQ**: tarjetas con glow/borde sobre navy, acordeón animado (una abierta), ícono `+`→`×`.

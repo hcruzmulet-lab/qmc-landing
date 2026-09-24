@@ -6,7 +6,9 @@ import { promo } from "@/lib/promo";
 
 const faqs = [
   { q: "¿Necesito cita previa?", a: "Puedes agendar por WhatsApp y coordinamos el horario que mejor te quede." },
-  { q: `¿Qué incluye la consulta de ${promo.price}?`, a: "Revisión de oídos, garganta, fondo de ojo y control de signos vitales." },
+  ...(promo.enabled
+    ? [{ q: `¿Qué incluye la consulta de ${promo.price}?`, a: "Revisión de oídos, garganta, fondo de ojo y control de signos vitales." }]
+    : []),
   { q: "¿Aceptan seguros médicos?", a: "Escríbenos por WhatsApp para confirmar la cobertura según tu caso." },
   { q: "¿Dónde están ubicados?", a: "Gaspar de Cañero E10-114 y Av. 6 de Diciembre, Quito." },
 ];
@@ -26,11 +28,6 @@ export function Faq() {
           "linear-gradient(180deg, #0C2545 0%, #103158 100%)",
       }}
     >
-      <div
-        aria-hidden="true"
-        className="bg-grid pointer-events-none absolute inset-0 opacity-40"
-        style={{ maskImage: "radial-gradient(circle at 50% 40%, #000 35%, transparent 80%)" }}
-      />
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 py-16 sm:py-24">
         <div className="text-center">

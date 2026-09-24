@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${site.brand} — Clínica de especialidades en Quito`,
+    name: `${site.brand} | Clínica de especialidades en Quito`,
     short_name: site.brand,
     description:
       "Más de 30 especialidades y servicios médicos en un mismo lugar en Quito. Agenda por WhatsApp.",

@@ -60,11 +60,6 @@ export function B2bTeaser() {
             "radial-gradient(760px 520px at 0% 100%, rgba(33,116,153,0.26), transparent 60%)",
         }}
       />
-      <div
-        aria-hidden="true"
-        className="bg-grid pointer-events-none absolute inset-0 opacity-40"
-        style={{ maskImage: "radial-gradient(circle at 60% 38%, #000 32%, transparent 80%)" }}
-      />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 sm:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">

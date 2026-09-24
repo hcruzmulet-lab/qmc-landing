@@ -8,9 +8,25 @@ type Props = {
   source: string;
   label?: string;
   className?: string;
+  // "solid" = CTA principal de la sección. "outline" = CTA repetido en listas
+  // (filas, tarjetas), para que el verde sólido no se diluya.
+  variant?: "solid" | "outline";
 };
 
-export function CtaButton({ message, source, label = "Agendar por WhatsApp", className = "" }: Props) {
+const VARIANTS = {
+  solid:
+    "text-white shadow-sm bg-[var(--color-accent)] hover:bg-[#047857]",
+  outline:
+    "border border-[var(--color-accent)]/40 text-[#047857] hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10",
+};
+
+export function CtaButton({
+  message,
+  source,
+  label = "Agendar por WhatsApp",
+  className = "",
+  variant = "solid",
+}: Props) {
   const href = buildWhatsAppUrl(message);
   return (
     <a
@@ -20,8 +36,9 @@ export function CtaButton({ message, source, label = "Agendar por WhatsApp", cla
       onClick={() => trackLeadClick(source)}
       className={
         "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 " +
-        "font-semibold text-white shadow-sm transition-colors duration-200 " +
-        "bg-[var(--color-accent)] hover:bg-[#047857] focus-visible:outline focus-visible:outline-2 " +
+        "font-semibold transition-colors duration-200 active:scale-[0.98] " +
+        VARIANTS[variant] +
+        " focus-visible:outline focus-visible:outline-2 " +
         "focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] " +
         className
       }

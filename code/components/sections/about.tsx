@@ -1,4 +1,4 @@
-import { Target, Eye, HeartHandshake } from "lucide-react";
+import { HeartHandshake } from "lucide-react";
 import { site } from "@/lib/site";
 import { Reveal } from "@/components/sections/reveal";
 import { CircularTestimonials, type CircularSlide } from "@/components/ui/circular-testimonials";
@@ -50,8 +50,7 @@ export function About() {
     <section id="quienes-somos" className="bg-[var(--color-surface)]">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Quiénes somos</p>
-          <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
+          <h2 className="font-display text-3xl font-bold leading-[1.1] text-[var(--color-primary)] sm:text-4xl">
             Una clínica pensada para tu familia
           </h2>
           <p className="mt-4 text-[var(--color-muted-foreground)]">
@@ -64,16 +63,13 @@ export function About() {
         </Reveal>
 
         {/* Misión y Visión — texto real de la carta */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-14">
           <Reveal variant="left">
-            <div className="h-full rounded-3xl border border-[var(--color-border)] bg-[var(--color-background)] p-7">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--color-secondary)]/12 text-[var(--color-secondary)]">
-                <Target className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-primary)]">
+            <div className="h-full border-t-2 border-[var(--color-secondary)] pt-6">
+              <h3 className="font-display text-xl font-bold text-[var(--color-primary)]">
                 Nuestra misión
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted-foreground)]">
+              <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--color-muted-foreground)]">
                 Contribuir con una medicina especializada de alto nivel, con los
                 conceptos científicos más actualizados y un trato personalizado y
                 humano, basados en la atención preventiva, la calidad, la
@@ -82,14 +78,11 @@ export function About() {
             </div>
           </Reveal>
           <Reveal variant="right" delay={0.08}>
-            <div className="h-full rounded-3xl border border-[var(--color-border)] bg-[var(--color-background)] p-7">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--color-secondary)]/12 text-[var(--color-secondary)]">
-                <Eye className="h-5 w-5" aria-hidden="true" />
-              </span>
-              <h3 className="mt-4 font-display text-xl font-bold text-[var(--color-primary)]">
+            <div className="h-full border-t-2 border-[var(--color-secondary)] pt-6">
+              <h3 className="font-display text-xl font-bold text-[var(--color-primary)]">
                 Nuestra visión
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted-foreground)]">
+              <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--color-muted-foreground)]">
                 Ser el centro médico elegido por nuestros pacientes de la medicina
                 privada ambulatoria en Quito, convirtiéndonos en una institución
                 líder de la buena salud y en continuo crecimiento, con una atención

@@ -88,6 +88,7 @@ export function Promociones() {
           source={`promo-${p.id}`}
           label="Agendar promo"
           className="mt-4 w-full"
+          variant="outline"
         />
       </div>
     </Reveal>
@@ -110,7 +111,6 @@ export function Promociones() {
         <Reveal variant="scale" className="mt-10">
           <div className="relative grid overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-background)] shadow-2xl sm:grid-cols-[1.4fr_1fr]">
             <BorderBeam size={300} duration={11} />
-            <BorderBeam size={300} duration={11} delay={5.5} colorFrom="#059669" colorTo="#2BD4E6" />
             <div className="p-8 sm:p-10">
               <p className="eyebrow">Promo de reapertura</p>
               <h3 className="mt-2 font-display text-2xl font-bold leading-[1.15] text-[var(--color-primary)] sm:text-3xl">

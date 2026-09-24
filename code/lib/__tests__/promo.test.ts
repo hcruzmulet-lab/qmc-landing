@@ -7,8 +7,8 @@ describe("promo config", () => {
     expect(promo.regularPrice).toBe("$25");
   });
 
-  it("isPromoActive is true when enabled", () => {
-    expect(isPromoActive(promo)).toBe(true);
+  it("isPromoActive refleja el flag enabled", () => {
+    expect(isPromoActive(promo)).toBe(promo.enabled);
   });
 
   it("savingsLabel shows the discount amount", () => {

@@ -1,10 +1,7 @@
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
-import { Promociones } from "@/components/sections/promociones";
 import { SpecialtiesShowcase } from "@/components/sections/specialties-showcase";
 import { About } from "@/components/sections/about";
-import { Testimonials } from "@/components/sections/testimonials";
-import { InstagramCta } from "@/components/sections/instagram-cta";
 import { B2bTeaser } from "@/components/sections/b2b-teaser";
 import { Location } from "@/components/sections/location";
 import { Faq } from "@/components/sections/faq";
@@ -16,14 +13,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="pb-20 lg:pb-0">
+      {/* overflow-x-clip: los Reveal laterales (x ±36px) no generan scroll
+          horizontal en móvil. Ocultos por ahora: Testimonios (hasta tener reseñas
+          reales) y Promociones (la clínica pidió no publicar precios). */}
+      <main className="overflow-x-clip pb-20 lg:pb-0">
         <Hero />
-        <Promociones />
         <SpecialtiesShowcase />
         <About />
-        <Testimonials />
         <Faq />
-        <InstagramCta />
         <B2bTeaser />
         <Location />
       </main>

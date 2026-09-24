@@ -41,7 +41,7 @@ export function Location() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-[var(--color-secondary)]" aria-hidden="true" />
-                <a href={`tel:${site.phoneE164}`} className="hover:text-[var(--color-secondary)]">{site.phone}</a>
+                <a href={`tel:${site.phoneE164}`} className="-my-3 inline-flex min-h-11 items-center hover:text-[var(--color-secondary)]">{site.phone}</a>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="h-5 w-5 shrink-0 text-[var(--color-secondary)]" aria-hidden="true" />
@@ -49,7 +49,7 @@ export function Location() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-[var(--color-secondary)]" aria-hidden="true" />
-                <a href={`mailto:${site.email}`} className="hover:text-[var(--color-secondary)]">{site.email}</a>
+                <a href={`mailto:${site.email}`} className="-my-3 inline-flex min-h-11 items-center break-all hover:text-[var(--color-secondary)]">{site.email}</a>
               </li>
             </ul>
           </Reveal>
