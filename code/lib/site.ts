@@ -6,8 +6,9 @@ export const site = {
   commercialName: "QMC - MEDISUPORT",
   brand: "QMC Medisuport",
   // Dominio de producción canónico — usado por metadataBase, sitemap, JSON-LD.
-  // TODO(content): confirmar dominio final con la clínica (¿con o sin www?).
-  url: "https://quitomedicalcenter.com",
+  // El dominio raíz sigue en el servidor de facturación (Odoo); la landing vive
+  // en el subdominio salud. Cambiar cuando se migre el raíz.
+  url: "https://salud.quitomedicalcenter.com",
   ruc: "1792900468001",
   slogan: "¡Tu Salud Primero!",
   phone: "(02) 224-7429",

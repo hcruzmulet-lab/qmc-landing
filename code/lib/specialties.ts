@@ -65,7 +65,6 @@ export const specialties = [
     nombre: "Medicina General",
     icon: Stethoscope,
     categoria: "Especialidades médicas",
-    principal: true,
     descCorta: "Tu primer punto de contacto para cualquier necesidad de salud.",
     descLarga:
       "Diagnóstico, tratamiento y orientación para toda la familia. Chequeos preventivos, control de enfermedades crónicas y derivación a especialistas cuando se requiere.",
@@ -133,7 +132,6 @@ export const specialties = [
     nombre: "Pediatría",
     icon: Baby,
     categoria: "Especialidades médicas",
-    principal: true,
     descCorta: "Cuidado de la salud de tus hijos, desde recién nacidos hasta adolescentes.",
     descLarga:
       "Atención médica integral para bebés, niños y adolescentes. Controles de crecimiento y desarrollo, vacunación y tratamiento de las enfermedades comunes de la infancia, con un enfoque cercano y preventivo.",
@@ -159,7 +157,6 @@ export const specialties = [
     nombre: "Ginecología y Obstetricia",
     icon: Venus,
     categoria: "Especialidades médicas",
-    principal: true,
     descCorta: "Salud de la mujer en cada etapa, con acompañamiento del embarazo.",
     descLarga:
       "Atención integral de la salud femenina: controles ginecológicos, prevención, planificación familiar y seguimiento del embarazo, con consultorio equipado y privacidad.",
@@ -304,6 +301,7 @@ export const specialties = [
     nombre: "Endocrinología",
     icon: Gauge,
     categoria: "Especialidades médicas",
+    principal: true,
     descCorta: "Manejo de hormonas, tiroides, diabetes y metabolismo.",
     descLarga:
       "Diagnóstico y tratamiento de trastornos hormonales y metabólicos, incluyendo diabetes, tiroides y problemas de peso, con seguimiento de laboratorio.",
@@ -325,6 +323,7 @@ export const specialties = [
     nombre: "Alergología",
     icon: Leaf,
     categoria: "Especialidades médicas",
+    principal: true,
     descCorta: "Diagnóstico y control de alergias respiratorias y de piel.",
     descLarga:
       "Estudio y tratamiento de las alergias que afectan tu respiración y tu piel, identificando los desencadenantes para controlar los síntomas a largo plazo.",
@@ -716,6 +715,7 @@ export const specialties = [
     nombre: "Laboratorio Clínico",
     icon: FlaskConical,
     categoria: "Laboratorio",
+    principal: true,
     descCorta: "Exámenes confiables y rápidos para diagnóstico y control.",
     descLarga:
       "Toma de muestras y exámenes de laboratorio con equipos propios de hematología, química y hormonas, con resultados confiables integrados a tu atención médica.",
