@@ -29,6 +29,9 @@ const fotos: Record<string, string> = {
   traumatologia: "/clinic/fisioterapia.jpg",
   dermatologia: "/clinic/consultorio.jpg",
   rehabilitacion: "/clinic/gimnasio.jpg",
+  endocrinologia: "/clinic/consultorio.jpg",
+  alergologia: "/clinic/recepcion.jpg",
+  "laboratorio-clinico": "/clinic/pasillo.jpg",
 };
 
 // Collage del fondo animado (6 espacios reales de la clínica).
@@ -115,7 +118,7 @@ export function SpecialtiesShowcase() {
                   >
                     <div className="group flex items-start gap-4 py-5">
                       <Icon
-                        className={`mt-1 h-5 w-5 shrink-0 transition-colors ${
+                        className={`mt-1 hidden h-5 w-5 shrink-0 transition-colors sm:block ${
                           isActive ? "text-[var(--color-secondary)]" : "text-[var(--color-muted-foreground)]"
                         }`}
                         aria-hidden="true"
@@ -128,6 +131,7 @@ export function SpecialtiesShowcase() {
                         aria-hidden="true"
                         className="h-14 w-14 shrink-0 rounded-xl object-cover lg:hidden"
                       />
+                      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-start sm:gap-4">
                       {/* Nombre + descripción → página de detalle */}
                       <Link
                         href={`/especialidades/${s.slug}`}
@@ -136,7 +140,7 @@ export function SpecialtiesShowcase() {
                       >
                         <span className="flex items-baseline gap-2">
                           <span
-                            className={`font-display text-2xl font-medium transition-colors ${
+                            className={`font-display text-xl font-medium [overflow-wrap:anywhere] hyphens-auto transition-colors sm:text-2xl ${
                               isActive ? "text-[var(--color-secondary)]" : "text-[var(--color-primary)]"
                             }`}
                           >
@@ -158,11 +162,12 @@ export function SpecialtiesShowcase() {
                         rel="noopener noreferrer"
                         onClick={() => trackLeadClick(`especialidad:${s.slug}`)}
                         aria-label={`Agendar ${s.nombre} por WhatsApp`}
-                        className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-xl border border-[var(--color-accent)]/40 px-4 py-2 text-sm font-semibold text-[#047857] transition-colors hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+                        className="inline-flex min-h-11 shrink-0 items-center gap-1.5 self-start rounded-xl border border-[var(--color-accent)]/40 px-4 py-2 text-sm font-semibold text-[#047857] transition-colors hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
                       >
                         <MessageCircle className="h-4 w-4" aria-hidden="true" />
                         Agendar
                       </a>
+                      </div>
                     </div>
                   </li>
                 );
